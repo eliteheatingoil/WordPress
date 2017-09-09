@@ -1,0 +1,164 @@
+/*
+Theme Name: Elite Heating Oil Custom Theme
+Author: Kyle Cogswell
+Description: Custom theme built to meet business requirements of Elite Heating Oil
+Version: 0.0.1
+Tags: bootstrap
+*/
+.nav {
+  padding: 20px;
+  border-bottom: 5px solid #ff7b28;
+}
+
+.hero {
+  background-color: #074ab9;
+  padding: 40px 0;
+}
+
+.hero-slider .slide img {
+  margin: 0px auto;
+  margin-bottom: 20px;
+}
+
+.slick-slide::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.slick-slide .slide-content {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.slick-slide .slide-content button {
+  margin: 0px auto;
+}
+
+.price-slice {
+  margin: 20px 0;
+  color: white;
+  font-weight: bold;
+}
+
+.price-slice h3, .price-slice h2 {
+  margin: 10px;
+}
+
+.price-slice .content {
+  height: 205px;
+  background-image: url("../../images/truck.png");
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.price-slice .message {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 150px;
+  width: 244px;
+}
+
+@media (min-width: 320px) {
+  .price-slice .message {
+    width: 258px;
+  }
+}
+
+@media (min-width: 576px) {
+  .price-slice .message {
+    right: 50px;
+    left: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .price-slice .message {
+    right: 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .price-slice .message {
+    right: 115px;
+  }
+}
+
+.oil-price-container {
+  padding: 0px;
+}
+
+.oil-price-container .oil-price {
+  margin: 0 0 10px -20px;
+  font-size: 4.5rem;
+}
+
+@media (min-width: 320px) {
+  .oil-price-container .oil-price {
+    margin: 0 0 10px 0;
+  }
+}
+
+.per-litre-container {
+  padding: 0px;
+  margin: 5px 0;
+}
+
+.btn-orange {
+  background-color: #ff7b28;
+  color: #fff;
+  padding: 6px 14px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-bottom: 4px solid #b35c07;
+  text-transform: uppercase;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+
+.btn-orange:hover {
+  background-color: #ff9654;
+  margin-top: -5px !important;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .btn-orange {
+    padding: 10px 25px;
+  }
+}
+
+.slick-list {
+  margin: 20px;
+}
+
+.slick-dots li.slick-active button::before {
+  opacity: 4.75;
+  color: #fff;
+}
+
+.slick-dots {
+  bottom: auto;
+}
+
+.slick-dots li button::before {
+  font-size: 12px;
+  color: white;
+}
+
+.slick-next {
+  right: 0px;
+}
+
+.slick-prev {
+  left: 0px;
+}
+
+/*# sourceMappingURL=style.css.map */
