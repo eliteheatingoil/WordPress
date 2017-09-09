@@ -11,7 +11,7 @@ Tags: bootstrap
 }
 
 .hero {
-  background-color: #074ab9;
+  background-color: #1d4b97;
   padding: 40px 0;
 }
 
@@ -125,7 +125,7 @@ Tags: bootstrap
 
 .btn-orange:hover {
   background-color: #ff9654;
-  margin-top: -5px !important;
+  margin-top: -2px !important;
   color: white;
 }
 

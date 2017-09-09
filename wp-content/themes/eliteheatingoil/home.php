@@ -6,19 +6,19 @@
     <div class="hero-slider text-center">
       <div class="slide">
         <div class="slide-content">
-          <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/promo.png" alt="" class="img-responsive">
+          <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/promo_old.png" alt="" class="img-responsive">
           <button type="button" class="btn btn-orange">Order Now</button>
         </div>
       </div>
       <div class="slide">
         <div class="slide-content text-center">
-          <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/promo.png" alt="" class="img-responsive">
+          <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/promo_old.png" alt="" class="img-responsive">
           <button type="button" class="btn btn-orange">Order Now</button>
         </div>
       </div>
       <div class="slide">        
         <div class="slide-content text-center">
-          <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/promo.png" alt="" class="img-responsive">
+          <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/promo_old.png" alt="" class="img-responsive">
           <button type="button" class="btn btn-orange">Order Now</button>
         </div>
       </div>
