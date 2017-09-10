@@ -1,15 +1,15 @@
 .btn-orange{
-    background-color: #ff7b28;
+    background-color: $orange;
     color: #fff;
     padding: 6px 14px;
     font-weight: 700;
     font-size: 1.5rem;
-    border-bottom: 4px solid #b35c07;
+    border-bottom: 4px solid $orange-shadow;
     text-transform: uppercase;
     transition: all 100ms ease-in-out;
 
     &:hover{
-        background-color: #ff9654;
+        background-color: $orange-hover;
         margin-top: -2px !important;
         color: white;
     }
@@ -21,11 +21,12 @@
     width: 90%;
     padding: 10px 0;
     color: white;
-    background-color: #1d4b97;
-    border-bottom: 4px solid #14356c;
+    background-color: $blue;
+    border-bottom: 4px solid $blue-shadow;
+    transition: all 100ms ease-in-out;
 
     &:hover{
-        background-color: #3a67b1;
+        background-color: $blue-hover;
         margin-top: -2px !important;
         margin-bottom: 2px;
         color: white;

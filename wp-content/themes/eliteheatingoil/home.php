@@ -2,8 +2,14 @@
 
 <?php get_template_part('partials/hero'); ?>
 
-<?php get_template_part('partials/todays-price'); ?>
+<div class="container">
 
-<?php get_template_part('partials/cards'); ?>
+    <?php get_template_part('partials/todays-price'); ?>
+
+    <?php get_template_part('partials/cards'); ?>
+
+    <?php get_template_part('partials/offer'); ?>
+
+</div>
 
 <?php get_footer(); ?>

@@ -6,6 +6,10 @@ Version: 0.0.1
 Tags: bootstrap
 */
 
-@import "layout/layout";
 @import "components/components";
+@import "layout/layout";
 @import "overrides/overrides";
+
+section{
+    margin-bottom: 20px;
+}

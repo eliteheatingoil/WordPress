@@ -5,6 +5,86 @@ Description: Custom theme built to meet business requirements of Elite Heating O
 Version: 0.0.1
 Tags: bootstrap
 */
+.btn-orange {
+  background-color: #ff7b28;
+  color: #fff;
+  padding: 6px 14px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-bottom: 4px solid #b35c07;
+  text-transform: uppercase;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+
+.btn-orange:hover {
+  background-color: #ff9654;
+  margin-top: -2px !important;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .btn-orange {
+    padding: 10px 25px;
+  }
+}
+
+.btn-more {
+  width: 90%;
+  padding: 10px 0;
+  color: white;
+  background-color: #1d4b97;
+  border-bottom: 4px solid #14356c;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+
+.btn-more:hover {
+  background-color: #3a67b1;
+  margin-top: -2px !important;
+  margin-bottom: 2px;
+  color: white;
+}
+
+.card {
+  width: 100%;
+  border: 2px solid #f1f1f1;
+  visibility: hidden;
+}
+
+.card .card-header {
+  background-color: #f1f1f1;
+  padding: 0.3rem;
+}
+
+.card .card-header h3 {
+  margin: 0px;
+}
+
+.card .card-body {
+  padding: 20px;
+  height: 275px;
+}
+
+.card .card-footer {
+  padding: 10px;
+}
+
+.card-about {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+.card-services {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.card-faqs {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
 .nav {
   padding: 10px;
   border-bottom: 5px solid #ff7b28;
@@ -23,7 +103,7 @@ Tags: bootstrap
 
 .nav li {
   display: inline-block;
-  padding: 0 10px;
+  padding: 0 20px;
   font-weight: bold;
 }
 
@@ -33,6 +113,10 @@ Tags: bootstrap
 
 .nav .info-block:nth-child(2) {
   border-left: 2px solid #ddd;
+}
+
+.nav .information {
+  padding: 0 20px;
 }
 
 .nav .info-block {
@@ -48,6 +132,20 @@ Tags: bootstrap
   color: #989898;
   font-weight: bold;
   font-size: 14px;
+}
+
+footer {
+  height: 250px;
+  background-color: #1d4b97;
+  position: relative;
+}
+
+footer .copyright {
+  height: 25px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: #232222;
 }
 
 .hero {
@@ -78,7 +176,6 @@ Tags: bootstrap
 }
 
 .price-slice {
-  margin: 20px 0;
   color: white;
   font-weight: bold;
   z-index: 2;
@@ -153,82 +250,11 @@ Tags: bootstrap
   margin: 5px 0;
 }
 
-.btn-orange {
-  background-color: #ff7b28;
-  color: #fff;
-  padding: 6px 14px;
-  font-weight: 700;
-  font-size: 1.5rem;
-  border-bottom: 4px solid #b35c07;
-  text-transform: uppercase;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
-}
-
-.btn-orange:hover {
-  background-color: #ff9654;
-  margin-top: -2px !important;
-  color: white;
-}
-
-@media (min-width: 768px) {
-  .btn-orange {
-    padding: 10px 25px;
-  }
-}
-
-.btn-more {
-  width: 90%;
-  padding: 10px 0;
-  color: white;
-  background-color: #1d4b97;
-  border-bottom: 4px solid #14356c;
-}
-
-.btn-more:hover {
-  background-color: #3a67b1;
-  margin-top: -2px !important;
-  margin-bottom: 2px;
-  color: white;
-}
-
-.card {
-  width: 100%;
-  border: 2px solid #f1f1f1;
+.special-offer {
+  border: 4px solid #ff7b28;
+  color: #1d4b97;
+  font-weight: bold;
   visibility: hidden;
-}
-
-.card .card-header {
-  background-color: #f1f1f1;
-  padding: 0.3rem;
-}
-
-.card .card-header h3 {
-  margin: 0px;
-}
-
-.card .card-body {
-  padding: 20px;
-  height: 275px;
-}
-
-.card .card-footer {
-  padding: 10px;
-}
-
-.card-about {
-  -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
-}
-
-.card-services {
-  -webkit-animation-delay: 500ms;
-          animation-delay: 500ms;
-}
-
-.card-faqs {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
 }
 
 .slick-list {
@@ -255,6 +281,10 @@ Tags: bootstrap
 
 .slick-prev {
   left: 0px;
+}
+
+section {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

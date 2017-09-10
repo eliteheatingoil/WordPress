@@ -4,23 +4,40 @@ $(document).ready(function(){
     dots: true,
     infinite: false,
     speed: 300,
+    autoplay: true,
+    autoplaySpeed: 3000,
   });
 
   $(".card").each(function() {
     if ($(this).isOnScreen()) {
       $(this).addClass("animated fadeInUp");
       $(this).css('visibility', 'visible');
-    } else {
-      $(window).on('scroll', function() {
-        $(".card").each(function() {
-            if (isScrolledIntoView($(this))) {
+    }
+  });
+
+    if ($('.special-offer').isOnScreen()) {
+      $('.special-offer').addClass("animated fadeIn");
+      $('.special-offer').css('visibility', 'visible');
+    }
+
+
+   $(window).on('scroll', function() {
+      $(".card").each(function() {
+          if (isScrolledIntoView($(this))) {
+            if (!$(this).hasClass('animated')){
               $(this).addClass("animated fadeInUp");
               $(this).css('visibility', 'visible');
             }
-        });
+          }
       });
-    }
-  });
+
+      if (isScrolledIntoView($('.special-offer'))) {
+        if( !$('.special-offer').hasClass('animated')){
+          $('.special-offer').addClass("animated fadeIn");
+          $('.special-offer').css('visibility', 'visible');
+        }
+      }
+    });
 
 
 });
