@@ -27,18 +27,18 @@
 
 <div class="container-fluid">
 	<div class="row nav">
-		<div class="col-sm-4"> 
+		<div class="col-md-4"> 
 			<img src="<?php echo get_bloginfo( 'template_directory' );?>/images/blue_long_logo.png" alt="" class="">
 		</div>
-		<div class="col-sm-8">
-			<div class="col-sm-12">
+		<div class="col-md-8">
+			<div class="col-md-12">
 				<div class="pull-right information">
 				<?php get_template_part('partials/nav-info'); ?>
 				</div>
 			</div>
-			<div class="col-sm-12">
+		</div>
+					<div class="col-md-12">
 				<?php get_template_part('partials/nav'); ?>
 			</div>
-		</div>
 	</div>
 

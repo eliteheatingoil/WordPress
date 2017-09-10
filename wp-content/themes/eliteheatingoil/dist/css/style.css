@@ -94,7 +94,12 @@ Tags: bootstrap
 .nav img {
   max-height: 45px;
   width: auto;
-  margin: 20px 0 0 0;
+}
+
+@media (max-width: 1076px) {
+  .nav img {
+    max-height: 35px;
+  }
 }
 
 .nav nav {
@@ -255,6 +260,10 @@ footer .copyright {
   color: #1d4b97;
   font-weight: bold;
   visibility: hidden;
+}
+
+.special-offer h1 {
+  margin-bottom: 0px;
 }
 
 .slick-list {
