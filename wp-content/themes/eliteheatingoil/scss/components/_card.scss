@@ -1,0 +1,27 @@
+.card{
+    width: 100%;
+    border: 2px solid #f1f1f1;
+    visibility: hidden;
+
+    .card-header{
+        background-color: #f1f1f1;
+        padding: 0.3rem;
+
+        h3{
+            margin: 0px;
+        }
+    }
+
+    .card-body{
+        padding: 20px;
+        height: 275px;
+    }
+
+    .card-footer{
+        padding: 10px;
+    }
+}
+
+.card-about { animation-delay: 400ms; }
+.card-services { animation-delay: 500ms; }
+.card-faqs { animation-delay: 600ms; }

@@ -6,13 +6,54 @@ Version: 0.0.1
 Tags: bootstrap
 */
 .nav {
-  padding: 20px;
+  padding: 10px;
   border-bottom: 5px solid #ff7b28;
+  font-size: 16px;
+}
+
+.nav img {
+  max-height: 40px;
+  width: auto;
+  margin: 20px 0 0 0;
+}
+
+.nav nav {
+  margin-top: 10px;
+}
+
+.nav li {
+  display: inline-block;
+  padding: 0 10px;
+  font-weight: bold;
+}
+
+.nav .info-block:nth-child(1) {
+  border-left: 2px solid #ddd;
+}
+
+.nav .info-block:nth-child(2) {
+  border-left: 2px solid #ddd;
+}
+
+.nav .info-block {
+  max-width: 220px;
+  padding: 0 20px;
+}
+
+.nav .info-block .fa {
+  color: #1d4b97;
+}
+
+.nav .info-block .info-label {
+  color: #989898;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .hero {
   background-color: #1d4b97;
   padding: 40px 0;
+  z-index: 9999;
 }
 
 .hero-slider .slide img {
@@ -40,6 +81,7 @@ Tags: bootstrap
   margin: 20px 0;
   color: white;
   font-weight: bold;
+  z-index: 2;
 }
 
 .price-slice h3, .price-slice h2 {
@@ -133,6 +175,60 @@ Tags: bootstrap
   .btn-orange {
     padding: 10px 25px;
   }
+}
+
+.btn-more {
+  width: 90%;
+  padding: 10px 0;
+  color: white;
+  background-color: #1d4b97;
+  border-bottom: 4px solid #14356c;
+}
+
+.btn-more:hover {
+  background-color: #3a67b1;
+  margin-top: -2px !important;
+  margin-bottom: 2px;
+  color: white;
+}
+
+.card {
+  width: 100%;
+  border: 2px solid #f1f1f1;
+  visibility: hidden;
+}
+
+.card .card-header {
+  background-color: #f1f1f1;
+  padding: 0.3rem;
+}
+
+.card .card-header h3 {
+  margin: 0px;
+}
+
+.card .card-body {
+  padding: 20px;
+  height: 275px;
+}
+
+.card .card-footer {
+  padding: 10px;
+}
+
+.card-about {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+.card-services {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.card-faqs {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
 }
 
 .slick-list {

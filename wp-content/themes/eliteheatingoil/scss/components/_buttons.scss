@@ -16,3 +16,18 @@
 
     @media (min-width: 768px) { padding: 10px 25px;}
 }
+
+.btn-more{
+    width: 90%;
+    padding: 10px 0;
+    color: white;
+    background-color: #1d4b97;
+    border-bottom: 4px solid #14356c;
+
+    &:hover{
+        background-color: #3a67b1;
+        margin-top: -2px !important;
+        margin-bottom: 2px;
+        color: white;
+    }
+}

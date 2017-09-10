@@ -1,10 +1,7 @@
 .hero {
   background-color: #1d4b97;
-  // height: 400px;
   padding: 40px 0;
-}
-
-.hero-slider {
+  z-index: 9999;
 }
 
 .hero-slider .slide img {
