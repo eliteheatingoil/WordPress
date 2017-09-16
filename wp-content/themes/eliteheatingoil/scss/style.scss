@@ -10,6 +10,21 @@ Tags: bootstrap
 @import "layout/layout";
 @import "overrides/overrides";
 
+html, body{
+    min-width: 320px;
+}
+
+// global ul/li styles
+ul{
+    margin: 0px;
+    padding: 10px 0 0 0;
+}
+
+li{
+    font-weight: bold;
+}
+
+// global section style
 section{
     margin-bottom: 20px;
 }

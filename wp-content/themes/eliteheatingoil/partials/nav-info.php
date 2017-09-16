@@ -1,4 +1,4 @@
-<div class="info-block pull-right">
+<div class="info-block">
     <div class="info-label">
         <i class="fa fa-phone" aria-hidden="true"></i> 
         <span>Email us</span>
@@ -8,7 +8,7 @@
     </div>
 </div>
 
-<div class="info-block pull-right">
+<div class="info-block">
     <div class="info-label">
         <i class="fa fa-clock-o" aria-hidden="true"></i> 
         <span>Monday-Friday</span>
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="info-block pull-right">
+<div class="info-block">
     <div class="info-label">
         <i class="fa fa-phone" aria-hidden="true"></i> 
         <span>Call us</span>

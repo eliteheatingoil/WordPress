@@ -3,42 +3,79 @@
     border-bottom: 5px solid $orange;
     font-size: 16px;
 
-   
-
+    // logo
     img{
+        display: block;
         max-height: 45px;
-        width: auto;
 
-        @media (max-width: 1076px) { max-height: 35px;}
+        @media (max-width: 1076px) { max-height: 35px; margin-top: 5px;}
+        @media (max-width: 991px) { margin: 0px auto;}
+        @media (max-width: 768px) { max-height: 40px;margin: 6px 0 0 0; float: left;}
+        @media (max-width: 524px) { max-height: 30px;margin: 10px 0;}
+        @media (max-width: 400px) { max-height: 25px;margin: 12px 0;}
+        @media (max-width: 350px) { max-height: 22px;margin: 14px 0;}
     }
 
-    nav{
+    .logo-burger{
+        @media (max-width: 768px) { padding: 0px;}
+    }
+
+    // information blocks
+    .information{ 
+        padding: 0 20px; float: right;
+
+        @media (max-width: 991px) { 
+            float: none;
+            margin: 0px auto;
+            width: 588px;
+        }
+
+        // information block
+        .info-block{
+            max-width: 220px;
+            padding: 0 20px;
+            display: inline-block;
+
+            .fa{
+                color: $blue;
+            }
+
+            .info-label{
+                color: #989898;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            &:nth-child(2) { border-left: 2px solid #ddd; }
+            &:nth-child(3) { border-left: 2px solid #ddd; }
+        }
+
+    }
+
+    // desktop navigation
+    .navigation nav{
         margin-top: 10px;
-    }
+        text-align: center;
 
-    li{
-        display: inline-block;
-        padding: 0 20px;
-        font-weight: bold;
-    }
-
-    .info-block:nth-child(1) { border-left: 2px solid #ddd; }
-    .info-block:nth-child(2) { border-left: 2px solid #ddd; }
-
-    .information{ padding: 0 20px; }
-
-    .info-block{
-        max-width: 220px;
-        padding: 0 20px;
-
-        .fa{
-            color: $blue;
+        ul{
+            border-top: 1px solid #e8e8e8;
+            width: 100%;
         }
 
-        .info-label{
-            color: #989898;
-            font-weight: bold;
-            font-size: 14px;
+        li {
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 991px) { 
+            float: none;
+            text-align: center;
         }
     }
+
+
 } 
+
+.navigation, .info{
+@media (max-width: 768px) { display: none;}
+}
