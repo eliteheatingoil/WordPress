@@ -57,5 +57,6 @@
 
     button{
         @media (max-width: 991px) { width: 300px;}
+        @media (max-width: 412px) { width: 100%;}
     }
 }

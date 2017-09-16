@@ -55,7 +55,7 @@ $(document).ready(function(){
 
       $(this).addClass('burger-disabled');
       setTimeout(function() {
-          $(this).removeClass('burger-disabled');
+          $('.burger-menu-btn').removeClass('burger-disabled');
       }, 200);
 
   });

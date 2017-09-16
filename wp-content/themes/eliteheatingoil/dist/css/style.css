@@ -129,6 +129,12 @@ Tags: bootstrap
   }
 }
 
+@media (max-width: 412px) {
+  .card-faqs button {
+    width: 100%;
+  }
+}
+
 .burger-menu-btn {
   float: right;
   background: none;
@@ -554,8 +560,20 @@ footer .copyright {
   font-weight: bold;
 }
 
-.special-offer h1 {
+.special-offer .h1 {
   margin-bottom: 0px;
+}
+
+@media (max-width: 492px) {
+  .special-offer .h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 380px) {
+  .special-offer .h1 {
+    font-size: 18px;
+  }
 }
 
 .slick-list {
