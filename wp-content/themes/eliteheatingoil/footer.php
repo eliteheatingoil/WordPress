@@ -1,6 +1,21 @@
     </div>  
 		<footer>
-    <div class="copyright"></div>
+    <div class="container footer">
+      <div class="footer-logo-container">
+        <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/white_stacked_logo.png" alt="Elite Heating Oil" class="footer-stacked-logo img-responsive">
+        <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/white-long-logo.png" alt="Elite Heating Oil" class="footer-long-logo img-responsive">
+      </div>
+      <div class="footer-information-container">
+        <div class="information">
+				  <?php get_template_part('partials/nav-info'); ?>
+				</div>
+
+        <div style="clear:both;"></div>
+      </div>
+    </div>
+    <div class="copyright">
+      <em>Copyright 2017 Elite Heating Oil, All Rights Reserved.</em>
+    </div>
     </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
