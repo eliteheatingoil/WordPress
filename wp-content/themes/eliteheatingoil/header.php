@@ -25,7 +25,8 @@
 
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid content">
+
 	<div class="row nav">
 		<div class="col-md-4 logo-burger"> 
 			<img src="<?php echo get_bloginfo( 'template_directory' );?>/images/blue_long_logo.png" alt="" class="">
@@ -35,6 +36,7 @@
 			</button>
 			<div style="clear:both;"></div>
 		</div>
+
 		<div class="col-md-8 info">
 			<div class="row">
 				<div class="information">
@@ -43,11 +45,14 @@
 				<div style="clear:both;"></div>
 			</div>
 		</div>
+
 		<div class="col-md-12 navigation">
 			<?php get_template_part('partials/nav'); ?>
 		</div>
+
 		<div class="mobile-nav">
 			<?php get_template_part('partials/mobile-nav'); ?>
 		</div>
+
 	</div>
 
