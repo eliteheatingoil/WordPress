@@ -15,9 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $privatekey . "&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
     $resp = json_decode($response);
 
-    if (!$resp->success) {
+    if ($resp->success != true) {
         // What happens when the CAPTCHA was entered incorrectly
-        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again.");
+        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again. (" . $resp->error_codes . ")" );
     } else {
 	
         function clean_string($string) {
