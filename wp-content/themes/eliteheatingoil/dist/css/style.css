@@ -42,7 +42,6 @@ Tags: bootstrap
 .btn-more:hover {
   background-color: #3a67b1;
   margin-top: -2px !important;
-  margin-bottom: 2px;
   color: white;
 }
 
@@ -300,6 +299,40 @@ form .payment-method label {
 
 form input[type="submit"] {
   margin-top: 20px;
+}
+
+.location-widget {
+  width: 300px;
+  text-align: center;
+}
+
+.location-widget .location-wrapper, .location-widget .home {
+  display: inline-block;
+  position: relative;
+}
+
+.location-widget .home {
+  width: 80%;
+  background-color: #1d4b97;
+  color: white;
+  height: 150px;
+  padding-top: 60px;
+}
+
+.location-widget .location-wrapper {
+  text-align: center;
+}
+
+.location-widget .location-left, .location-widget .location-right {
+  width: 5%;
+}
+
+.location-widget .location-left input[type="radio"] {
+  left: -3px;
+}
+
+.location-widget .location-back, .location-widget .location-front {
+  width: 100%;
 }
 
 .nav {

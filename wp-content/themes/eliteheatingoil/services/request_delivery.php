@@ -1,57 +1,84 @@
 <?php
 
-require_once './vendor/autoload.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $template_direcotry = get_template_directory();
 
-$helperLoader = new SplClassLoader('Helpers', './vendor');
-$mailLoader   = new SplClassLoader('SimpleMail', './vendor');
+    require_once($template_direcotry . '/services/recaptchalib.php');
 
-$helperLoader->register();
-$mailLoader->register();
+    $publickey = "6Lfp1jEUAAAAAIl0IET0Vkjr0v-gub9m2QCpW5Tq";
 
-use Helpers\Config;
-use SimpleMail\SimpleMail;
+    $privatekey = "6Lfp1jEUAAAAAIiAii6t4ahXE3iUc9l84bUXvx0g";
 
-$config = new Config;
-$config->load('./config/config.php');
+    $resp = recaptcha_check_answer ($privatekey,
+                                $_SERVER["REMOTE_ADDR"],
+                                $_POST["recaptcha_challenge_field"],
+                                $_POST["recaptcha_response_field"]);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $first_name    = stripslashes(trim($_POST['first_name']));
-    $last_name    = stripslashes(trim($_POST['last_name']));
-    $email   = stripslashes(trim($_POST['email']));
-    $phone   = stripslashes(trim($_POST['phone']));
-    $subject = 'Delivery Request';
-    $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';
-
-    if (preg_match($pattern, $first_name) || preg_match($pattern, $last_name) || preg_match($pattern, $email)) {
-        die("Header injection detected");
-    }
-    $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-    if ($first_name && $last_name && $email && $emailIsValid && $subject && $message) {
-        $mail = new SimpleMail();
-        $mail->setTo('kcogswell26@gmail.com');
-        $mail->setFrom('web@eliteheatingoil.ca');
-        $mail->setSender($first_name . ' ' . $last_name);
-        $mail->setSenderEmail($email);
-        $mail->setSubject($subject);
-        $body = "
-        <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
-        <html>
-            <head>
-                <meta charset=\"utf-8\">
-            </head>
-            <body>
-                <h1>{$subject}</h1>
-                <p><strong>{$config->get('fields.name')}:</strong> {$name}</p>
-                <p><strong>{$config->get('fields.email')}:</strong> {$email}</p>
-                <p><strong>{$config->get('fields.phone')}:</strong> {$phone}</p>
-                <p><strong>{$config->get('fields.message')}:</strong> {$message}</p>
-            </body>
-        </html>";
-        $mail->setHtml($body);
-        $mail->send();
-        $emailSent = true;
+    if (!$resp->is_valid) {
+        // What happens when the CAPTCHA was entered incorrectly
+        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+            "(reCAPTCHA said: " . $resp->error . ")");
     } else {
-        $hasError = true;
-    }
-}
+	
+        function clean_string($string) {
+        $bad = array("content-type","bcc:","to:","cc:");
+        return str_replace($bad,"",$string);
+        }
+        
+        $first_name    = stripslashes(trim($_POST['first_name']));
+        $last_name    = stripslashes(trim($_POST['last_name']));
+        $email   = stripslashes(trim($_POST['email']));
+        $phone   = stripslashes(trim($_POST['phone']));
+        $address = stripslashes(trim($_POST['address']));
+        $city = stripslashes(trim($_POST['city']));
+        $postal_code = stripslashes(trim($_POST['postal_code']));
+        $subject = 'Delivery Request';    
+        $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';
+
+        if (preg_match($pattern, $first_name) || preg_match($pattern, $last_name) || preg_match($pattern, $email)) {
+            die("Header injection detected");
+        }
+
+        $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+        if ($first_name && $last_name && $email && $emailIsValid && $subject && $phone) {
+            $email_to = $email; // your email address send TO
+            $email_from = "support@eliteheatingoil.ca"; // your email address send FROM
+
+            $body = "
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <meta charset=\"utf-8\">
+                </head>
+                <body>
+                    <h1>{$subject}</h1>
+                    <p> A new delivery request has been submitted. Please see the details below.</p>
+                    <h3> Customer Information</h3>
+                    <p>Name: {$first_name} {$last_name}</p>
+                    <p>Email: {$email}</p>
+                    <p>Phone: {$phone}</p>
+                    <p>Address: {$address}, {$city}, {$postal_code}</p>
+                </body>
+            </html>";
+            
+            $email_message .= "Full Name: " . clean_string($first_name) . clean_string($last_name) ."\r\n";
+            $email_message .= "Reply-To: ".clean_string($email)."\r\n";
+
+            $headers = 'From: '.$email_from."\r\n";
+            $headers = 'Reply-To: '.$email."\r\n" ;
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+            $a = mail($email_to, $subject, $body, $headers);
+
+            if($a){
+                $emailSent = true;
+            }else{
+                $emailFailed = true;
+            }
+        }
+        
+     }  
+  }
 ?>

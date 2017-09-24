@@ -26,3 +26,44 @@ form {
         margin-top: 20px;
     }
 }
+
+.location-widget{
+    width: 300px;
+    text-align: center;
+
+    .location-wrapper, .home{
+        display: inline-block;
+        position: relative;
+    }
+
+    .home{
+        width: 80%;
+        background-color: $blue;
+        color: white; 
+        height: 150px;
+        padding-top: 60px;
+    }
+
+    .location-wrapper{
+        text-align: center;
+    }
+
+    .location-left, .location-right{
+        width: 5%;
+        // input[type="radio"]{
+        //     position: absolute;
+        //     top: 45px;
+        //     margin: 0px;
+        // }
+    }
+
+    .location-left{
+        input[type="radio"]{
+            left: -3px;
+        }
+    }
+
+    .location-back, .location-front{
+        width: 100%;
+    }
+}

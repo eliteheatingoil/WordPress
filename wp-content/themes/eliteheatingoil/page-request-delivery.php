@@ -1,66 +1,4 @@
-<?php
-
-	function clean_string($string) {
-	  $bad = array("content-type","bcc:","to:","cc:");
-	  return str_replace($bad,"",$string);
-	}
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $first_name    = stripslashes(trim($_POST['first_name']));
-        $last_name    = stripslashes(trim($_POST['last_name']));
-        $email   = stripslashes(trim($_POST['email']));
-        $phone   = stripslashes(trim($_POST['phone']));
-        $address = stripslashes(trim($_POST['address']));
-        $city = stripslashes(trim($_POST['city']));
-        $postal_code = stripslashes(trim($_POST['postal_code']));
-        $subject = 'Delivery Request';    
-        $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';
-
-        if (preg_match($pattern, $first_name) || preg_match($pattern, $last_name) || preg_match($pattern, $email)) {
-            die("Header injection detected");
-        }
-
-        $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-
-        if ($first_name && $last_name && $email && $emailIsValid && $subject && $phone) {
-            $email_to = $email; // your email address send TO
-            $email_from = "support@eliteheatingoil.ca"; // your email address send FROM
-
-            $body = "
-            <!DOCTYPE html>
-            <html>
-                <head>
-                    <meta charset=\"utf-8\">
-                </head>
-                <body>
-                    <h1>{$subject}</h1>
-                    <p> A new delivery request has been submitted. Please see the details below.</p>
-                    <h3> Customer Information</h3>
-                    <p>Name: {$name}</p>
-                    <p>Email: {$email}</p>
-                    <p>Phone: {$phone}</p>
-                    <p>Address: {$address}, {$city}, {$postal_code}</p>
-                </body>
-            </html>";
-            
-            $email_message .= "Full Name: " . clean_string($first_name) . clean_string($last_name) ."\r\n";
-            $email_message .= "Reply-To: ".clean_string($email)."\r\n";
-
-            $headers = 'From: '.$email_from."\r\n";
-            $headers = 'Reply-To: '.$email."\r\n" ;
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-            $a = mail($email_to, $subject, $body, $headers);
-
-            if($a){
-                $emailSent = true;
-            }else{
-                $emailFailed = true;
-            }
-        }
-    }
-?>
+<?php include(get_template_directory() . '/services/request_delivery.php'); ?>
 
 <?php get_header(); ?>
 <?php get_template_part('partials/hero'); ?>
@@ -121,7 +59,7 @@
                 </div>
                 <div class="col-sm-6 form-group">
                     <label for="city">City<span class="required">*</span></label>
-                    <input type="text" name="first_name" value="" class="form-control" required>
+                    <input type="text" name="city" value="" class="form-control" required>
                 </div>
                 <div class="col-sm-6 form-group">
                     <label for="postal_code">Postal Code<span class="required">*</span></label>
@@ -155,6 +93,26 @@
                     <label for="payment_method">
                         <input type="radio" name="payment_method" value="" required>Email Money Transfer
                     </label>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+
+            <h4>Tank Location</h4>
+            <div class="form-section">
+                <div class="location-widget">
+                    <div class="location-wrapper location-back">
+                        <input type="radio" name="location" value="back">
+                    </div>
+                    <div class="location-wrapper location-left">
+                        <input type="radio" name="location" value="left">
+                    </div>
+                    <div class="home"><span>Home</span></div>
+                    <div class="location-wrapper location-right">
+                        <input type="radio" name="location" value="right">
+                    </div>
+                    <div class="location-wrapper location-front">
+                        <input type="radio" name="location" value="front">
+                    </div>
                 </div>
             </div>
             <div style="clear:both;"></div>
