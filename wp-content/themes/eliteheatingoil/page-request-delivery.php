@@ -49,7 +49,7 @@
             $headers = 'From: '.$email_from."\r\n".
             'Reply-To: '.$email."\r\n" ;
 
-            $a = mail($email_to, $email_subject, $email_message, $headers);
+            $a = mail($email_to, $subject, $body, $headers);
 
             if($a){
                 $emailSent = true;
