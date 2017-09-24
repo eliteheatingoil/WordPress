@@ -16,7 +16,7 @@
             </p>
           </div>
           <div class="card-footer text-center">
-          <button type="button" class="btn btn-more">Read More</button>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>about-us"><button type="button" class="btn btn-more">Read More</button></a>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
 
           </div>
           <div class="card-footer text-center">
-          <button type="button" class="btn btn-more">Read More</button>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>services"><button type="button" class="btn btn-more">Read More</button></a>
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@
             </p>
           </div>
           <div class="card-footer text-center">
-          <button type="button" class="btn btn-more">Read More</button>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>FAQs"><button type="button" class="btn btn-more">Read More</button></a>
           </div>
         </div>
       </div>
