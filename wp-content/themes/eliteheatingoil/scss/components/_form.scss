@@ -1,0 +1,28 @@
+form {
+    h4{
+        border-bottom: 1px solid grey;
+        margin-top: 20px;
+    }
+
+    .form-section{
+        margin: 20px 0;
+    }
+
+    input[type="radio"]{
+        margin-right: 5px;
+    }
+
+    .required{
+        color: red;
+    }
+
+    .payment-method{
+        label{
+            width: 100%;
+        }
+    }
+
+    input[type="submit"]{
+        margin-top: 20px;
+    }
+}

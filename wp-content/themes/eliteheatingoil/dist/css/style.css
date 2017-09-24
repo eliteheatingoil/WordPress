@@ -277,6 +277,31 @@ Tags: bootstrap
           transform: rotate(-45deg);
 }
 
+form h4 {
+  border-bottom: 1px solid grey;
+  margin-top: 20px;
+}
+
+form .form-section {
+  margin: 20px 0;
+}
+
+form input[type="radio"] {
+  margin-right: 5px;
+}
+
+form .required {
+  color: red;
+}
+
+form .payment-method label {
+  width: 100%;
+}
+
+form input[type="submit"] {
+  margin-top: 20px;
+}
+
 .nav {
   padding: 10px;
   border-bottom: 5px solid #ff7b28;
