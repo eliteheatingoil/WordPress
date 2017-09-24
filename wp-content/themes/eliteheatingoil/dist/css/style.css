@@ -335,6 +335,28 @@ form input[type="submit"] {
   width: 100%;
 }
 
+.location-widget .street {
+  background-color: #4f4f4f;
+  color: white;
+  width: 90%;
+  height: 50px;
+  padding-top: 15px;
+}
+
+.location-widget .street .road-dots {
+  position: absolute;
+  font-size: 50px;
+  top: -12px;
+}
+
+.location-widget .street .road-dots:nth-child(1) {
+  left: 16px;
+}
+
+.location-widget .street .road-dots:nth-child(2) {
+  right: 16px;
+}
+
 .nav {
   padding: 10px;
   border-bottom: 5px solid #ff7b28;

@@ -113,6 +113,9 @@
                     <div class="location-wrapper location-front">
                         <input type="radio" name="location" value="front">
                     </div>
+                    <div class="location-wrapper street">
+                        <span> <span class="road-dots">- - -</span> ROAD <span class="road-dots">- - -</span></span>
+                    </div>
                 </div>
             </div>
             <div style="clear:both;"></div>
