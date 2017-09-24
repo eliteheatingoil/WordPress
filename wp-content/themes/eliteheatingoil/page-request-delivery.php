@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($first_name && $last_name && $email && $emailIsValid && $subject) {
         $mail = new SimpleMail();
         $mail->setTo('kcogswell26@gmail.com');
-        $mail->setFrom('web@eliteheatingoil.ca');
+        $mail->setFrom('support@eliteheatingoil.ca');
         $mail->setSender($first_name . ' ' . $last_name);
         $mail->setSenderEmail($email);
         $mail->setSubject($subject);
