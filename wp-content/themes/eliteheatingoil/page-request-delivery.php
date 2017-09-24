@@ -27,7 +27,7 @@
             $email_from = "support@eliteheatingoil.ca"; // your email address send FROM
 
             $body = "
-            <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
+            <!DOCTYPE html>
             <html>
                 <head>
                     <meta charset=\"utf-8\">
@@ -46,8 +46,10 @@
             $email_message .= "Full Name: " . clean_string($first_name) . clean_string($last_name) ."\r\n";
             $email_message .= "Reply-To: ".clean_string($email)."\r\n";
 
-            $headers = 'From: '.$email_from."\r\n".
-            'Reply-To: '.$email."\r\n" ;
+            $headers = 'From: '.$email_from."\r\n";
+            $headers = 'Reply-To: '.$email."\r\n" ;
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
             $a = mail($email_to, $subject, $body, $headers);
 
