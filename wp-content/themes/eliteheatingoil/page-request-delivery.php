@@ -5,27 +5,39 @@
 	  return str_replace($bad,"",$string);
 	}
 
-    $email_to = "kcogswell26@gmail.com"; // your email address send TO
-    $email_from = "support@eliteheatingoil.ca"; // your email address send FROM
-    $email_subject = "Delivery Request"; 
-	$email = $_POST['email']; 
-	$full_name = $_POST['first_name']; 
-		
-	
-	$email_message .= "Full Name: ".clean_string($full_name)."\r\n";
-	$email_message .= "Reply-To: ".clean_string($email)."\r\n";
+    $first_name    = stripslashes(trim($_POST['first_name']));
+    $last_name    = stripslashes(trim($_POST['last_name']));
+    $email   = stripslashes(trim($_POST['email']));
+    $phone   = stripslashes(trim($_POST['phone']));
+    $subject = 'Delivery Request';    
+    $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';
 
-    $headers = 'From: '.$email_from."\r\n".
-    'Reply-To: '.$email."\r\n" ;
-
-    $a = mail($email_to, $email_subject, $email_message, $headers);
-
-    if($a){
-        $emailSent = true;
-    }else{
-        $emailSent = false;
+    if (preg_match($pattern, $first_name) || preg_match($pattern, $last_name) || preg_match($pattern, $email)) {
+        die("Header injection detected");
     }
-    ?>
+    
+    $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+    if ($first_name && $last_name && $email && $emailIsValid && $subject && $phone) {
+        $email_to = $email; // your email address send TO
+        $email_from = "support@eliteheatingoil.ca"; // your email address send FROM
+
+        
+        $email_message .= "Full Name: " . clean_string($full_name) . clean_string($last_name) ."\r\n";
+        $email_message .= "Reply-To: ".clean_string($email)."\r\n";
+
+        $headers = 'From: '.$email_from."\r\n".
+        'Reply-To: '.$email."\r\n" ;
+
+        $a = mail($email_to, $email_subject, $email_message, $headers);
+
+        if($a){
+            $emailSent = true;
+        }else{
+            $emailSent = false;
+        }
+    }
+?>
 
 <?php get_header(); ?>
 <?php get_template_part('partials/hero'); ?>
