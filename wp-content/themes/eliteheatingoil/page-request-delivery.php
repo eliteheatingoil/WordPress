@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Header injection detected");
     }
     $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-    if ($first_name && $last_name && $email && $emailIsValid && $subject && $message) {
+    if ($first_name && $last_name && $email && $emailIsValid && $subject) {
         $mail = new SimpleMail();
         $mail->setTo('kcogswell26@gmail.com');
         $mail->setFrom('web@eliteheatingoil.ca');
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1>Request a Delivery</h1>
     </div>
     <div class="page-body">
-        <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery">
+        <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>index.php/request-delivery">
             <h4>Order Type<span class="required">*</span></h4>
             <div class="form-section">
                 <div class="col-sm-4">
