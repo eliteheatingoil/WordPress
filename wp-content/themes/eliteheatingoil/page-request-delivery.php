@@ -28,7 +28,7 @@
         <h1>Request a Delivery</h1>
     </div>
     <div class="page-body">
-        <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>index.php/request-delivery">
+        <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery">
             <h4>Order Type<span class="required">*</span></h4>
             <div class="form-section">
                 <div class="col-sm-4">
@@ -70,8 +70,8 @@
                     <input type="email" name="email" value="" class="form-control" required>
                 </div>
                 <div class="col-sm-12 form-group">
-                    <label for="phone">Phone<span class="required">*</span></label>
-                    <input type="tel" name="phone" value="" class="form-control" required>
+                    <label for="phone">Phone<span class="required">*</span> <span class="text-muted">(&times;&times;&times;-&times;&times;&times;-&times;&times;&times;&times;)</span></label>
+                    <input type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="phone" value="" class="form-control" required>
                 </div>
             </div>
             <div style="clear:both;"></div>

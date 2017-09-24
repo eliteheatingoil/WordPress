@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $publickey = "6Lfp1jEUAAAAAIl0IET0Vkjr0v-gub9m2QCpW5Tq";
     $privatekey = "6Lfp1jEUAAAAAIiAii6t4ahXE3iUc9l84bUXvx0g";
 
-    $response=file_get_contents("https://www.google.com/recaptcha/api/siteverifysecret=" . $privatekey . "&response=".$recaptchaResponse);
+    $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $privatekey . "&response=".$recaptchaResponse);
     $resp = json_decode($response);
 
     if ($resp->success != true) {

@@ -32,7 +32,7 @@ $the_query = new WP_Query(array(
                 <div class="row">Plus Tax</div>
               </div>
             </div>
-            <button type="button" class="btn btn-orange">Order Now</button>
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery"><button type="button" class="btn btn-orange">Order Now</button></a>
           </div>
         </div>
       </div>
