@@ -1,9 +1,9 @@
 <?php
 
-require_once './vendor/autoload.php';
+require_once get_template_directory() . '/services/vendor/autoload.php';
 
-$helperLoader = new SplClassLoader('Helpers', './vendor');
-$mailLoader   = new SplClassLoader('SimpleMail', './vendor');
+$helperLoader = new SplClassLoader('Helpers', get_template_directory() . '/services/vendor');
+$mailLoader   = new SplClassLoader('SimpleMail', get_template_directory() . '/services/vendor');
 
 $helperLoader->register();
 $mailLoader->register();
@@ -12,7 +12,7 @@ use Helpers\Config;
 use SimpleMail\SimpleMail;
 
 $config = new Config;
-$config->load('./config/config.php');
+$config->load(get_template_directory() . '/services/config/config.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $first_name    = stripslashes(trim($_POST['first_name']));
@@ -41,10 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </head>
             <body>
                 <h1>{$subject}</h1>
-                <p><strong>{$config->get('fields.name')}:</strong> {$name}</p>
-                <p><strong>{$config->get('fields.email')}:</strong> {$email}</p>
-                <p><strong>{$config->get('fields.phone')}:</strong> {$phone}</p>
-                <p><strong>{$config->get('fields.message')}:</strong> {$message}</p>
+                <p><strong>{$name}</p>
+                <p><strong>$email}</p>
+                <p><strong>{$phone}</p>
+                <p><strong>{$message}</p>
             </body>
         </html>";
         $mail->setHtml($body);
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1>Request a Delivery</h1>
     </div>
     <div class="page-body">
-        <form method="POST" action="<?php echo get_bloginfo( 'template_directory' );?>/page-request-delivery.php">
+        <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery">
             <h4>Order Type<span class="required">*</span></h4>
             <div class="form-section">
                 <div class="col-sm-4">
