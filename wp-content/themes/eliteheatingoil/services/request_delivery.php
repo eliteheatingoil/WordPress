@@ -1,23 +1,23 @@
 <?php
+$template_direcotry = get_template_directory();
+
+// require_once($template_direcotry . '/services/recaptchalib.php');
+
+
+
+// $recaptcha_html = recaptcha_get_html($publickey);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $template_direcotry = get_template_directory();
-
-    require_once($template_direcotry . '/services/recaptchalib.php');
-
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
     $publickey = "6Lfp1jEUAAAAAIl0IET0Vkjr0v-gub9m2QCpW5Tq";
-
     $privatekey = "6Lfp1jEUAAAAAIiAii6t4ahXE3iUc9l84bUXvx0g";
 
-    $resp = recaptcha_check_answer ($privatekey,
-                                $_SERVER["REMOTE_ADDR"],
-                                $_POST["recaptcha_challenge_field"],
-                                $_POST["recaptcha_response_field"]);
+    $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $privatekey . "&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+    $resp = json_decode($response);
 
-    if (!$resp->is_valid) {
+    if (!$resp->success) {
         // What happens when the CAPTCHA was entered incorrectly
-        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-            "(reCAPTCHA said: " . $resp->error . ")");
+        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again.");
     } else {
 	
         function clean_string($string) {
