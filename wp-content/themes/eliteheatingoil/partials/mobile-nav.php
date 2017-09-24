@@ -1,11 +1,6 @@
 <div style="clear:both;"></div>
 <nav>
     <ul>
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>About</li></a>
-        <a href="#"><li>Services</li></a>
-        <a href="#"><li>Request Delivery</li></a>
-        <a href="#"><li>FAQs</li></a>
-        <a href="#"><li>Contact</li></a>
+        <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
     </ul>
 </nav>

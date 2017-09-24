@@ -491,12 +491,17 @@ form input[type="submit"] {
 
 .mobile-nav li {
   display: block;
-  padding: 15px;
   text-align: left;
   border-top: 1px solid #e8e8e8;
 }
 
-.mobile-nav li:hover {
+.mobile-nav li a {
+  display: block;
+  width: 100%;
+  padding: 15px;
+}
+
+.mobile-nav li a:hover {
   background-color: #f9f9f9;
 }
 
