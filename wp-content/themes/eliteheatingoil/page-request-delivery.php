@@ -48,8 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </body>
         </html>";
         $mail->setHtml($body);
-        $mail->send();
-        $emailSent = true;
+        if ( $mail->send() ):
+            $emailSent = true;
+        else:
+            $emailSent = false;
+        endif;
     } else {
         $hasError = true;
     }
@@ -61,6 +64,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="container">
 
 <div class="page-content col-xs-12 col-sm-10 col-sm-offset-1">
+    <?php if($emailSent): ?>
+        <div class="alert alert-success">
+            "email sent"
+        </div>
+    <?php else: ?>
+        <div class="alert alert-danger">
+            "email not sent"
+        </div>
+    <?php endif; ?>
     <?php if($hasError): ?>
         <div class="alert alert-warning">
             "error"
