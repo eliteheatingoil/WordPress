@@ -10,6 +10,9 @@
         $last_name    = stripslashes(trim($_POST['last_name']));
         $email   = stripslashes(trim($_POST['email']));
         $phone   = stripslashes(trim($_POST['phone']));
+        $address = stripslashes(trim($_POST['address']));
+        $city = stripslashes(trim($_POST['city']));
+        $postal_code = stripslashes(trim($_POST['postal_code']));
         $subject = 'Delivery Request';    
         $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';
 
@@ -23,8 +26,24 @@
             $email_to = $email; // your email address send TO
             $email_from = "support@eliteheatingoil.ca"; // your email address send FROM
 
+            $body = "
+            <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
+            <html>
+                <head>
+                    <meta charset=\"utf-8\">
+                </head>
+                <body>
+                    <h1>{$subject}</h1>
+                    <p> A new delivery request has been submitted. Please see the details below.</p>
+                    <h3> Customer Information</h3>
+                    <p>Name: {$name}</p>
+                    <p>Email: {$email}</p>
+                    <p>Phone: {$phone}</p>
+                    <p>Address: {$address}, {$city}, {$postal_code}</p>
+                </body>
+            </html>";
             
-            $email_message .= "Full Name: " . clean_string($full_name) . clean_string($last_name) ."\r\n";
+            $email_message .= "Full Name: " . clean_string($first_name) . clean_string($last_name) ."\r\n";
             $email_message .= "Reply-To: ".clean_string($email)."\r\n";
 
             $headers = 'From: '.$email_from."\r\n".
