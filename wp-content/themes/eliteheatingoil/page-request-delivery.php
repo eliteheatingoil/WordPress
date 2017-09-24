@@ -1,63 +1,31 @@
 <?php
 
-require_once get_template_directory() . '/services/vendor/autoload.php';
+	function clean_string($string) {
+	  $bad = array("content-type","bcc:","to:","cc:");
+	  return str_replace($bad,"",$string);
+	}
 
-$helperLoader = new SplClassLoader('Helpers', get_template_directory() . '/services/vendor');
-$mailLoader   = new SplClassLoader('SimpleMail', get_template_directory() . '/services/vendor');
+    $email_to = "kcogswell26@gmail.com"; // your email address send TO
+    $email_from = "support@eliteheatingoil.ca"; // your email address send FROM
+    $email_subject = "Delivery Request"; 
+	$email = $_POST['email']; 
+	$full_name = $_POST['first_name']; 
+		
+	
+	$email_message .= "Full Name: ".clean_string($full_name)."\r\n";
+	$email_message .= "Reply-To: ".clean_string($email)."\r\n";
 
-$helperLoader->register();
-$mailLoader->register();
+    $headers = 'From: '.$email_from."\r\n".
+    'Reply-To: '.$email."\r\n" ;
 
-use Helpers\Config;
-use SimpleMail\SimpleMail;
+    $a = mail($email_to, $email_subject, $email_message, $headers);
 
-$config = new Config;
-$config->load(get_template_directory() . '/services/config/config.php');
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $first_name    = stripslashes(trim($_POST['first_name']));
-    $last_name    = stripslashes(trim($_POST['last_name']));
-    $email   = stripslashes(trim($_POST['email']));
-    $phone   = stripslashes(trim($_POST['phone']));
-    $subject = 'Delivery Request';
-    $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';
-
-    if (preg_match($pattern, $first_name) || preg_match($pattern, $last_name) || preg_match($pattern, $email)) {
-        die("Header injection detected");
+    if($a){
+        $emailSent = true;
+    }else{
+        $emailSent = false;
     }
-    $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-    if ($first_name && $last_name && $email && $emailIsValid && $subject) {
-        $mail = new SimpleMail();
-        $mail->setTo('kcogswell26@gmail.com');
-        $mail->setFrom('support@eliteheatingoil.ca');
-        $mail->setSender($first_name . ' ' . $last_name);
-        $mail->setSenderEmail($email);
-        $mail->setSubject($subject);
-        $body = "
-        <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
-        <html>
-            <head>
-                <meta charset=\"utf-8\">
-            </head>
-            <body>
-                <h1>{$subject}</h1>
-                <p><strong>{$name}</p>
-                <p><strong>$email}</p>
-                <p><strong>{$phone}</p>
-                <p><strong>{$message}</p>
-            </body>
-        </html>";
-        $mail->setHtml($body);
-        if ( $mail->send() ):
-            $emailSent = true;
-        else:
-            $emailSent = false;
-        endif;
-    } else {
-        $hasError = true;
-    }
-}
-?>
+    ?>
 
 <?php get_header(); ?>
 <?php get_template_part('partials/hero'); ?>
