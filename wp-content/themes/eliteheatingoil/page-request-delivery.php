@@ -1,4 +1,18 @@
 <?php include(get_template_directory() . '/services/request_delivery.php'); ?>
+<?php
+$the_query = new WP_Query(array(
+  'post_type'			=> 'oil_price',
+  'posts_per_page'	=> 1,
+  'order'				=> 'DESC'
+));
+?>
+
+<?php if( $the_query->have_posts() ): ?>
+    <?php while( $the_query->have_posts() ) : $the_query->the_post(); 
+        $price = get_field('price');
+    endwhile;
+endif;
+?>
 
 <?php get_header(); ?>
 <?php get_template_part('partials/hero'); ?>
@@ -7,16 +21,16 @@
 <div class="page-content col-xs-12 col-sm-10 col-sm-offset-1">
     <?php if($emailSent): ?>
         <div class="alert alert-success">
-            "email sent"
+            email sent
         </div>
     <?php elseif ($emailFailed): ?>
         <div class="alert alert-danger">
-            "email not sent"
+            email not sent
         </div>
     <?php endif; ?>
     <?php if($hasError): ?>
         <div class="alert alert-warning">
-            "error"
+            error
         </div>
     <?php endif; ?>
     <ol class="breadcrumb">
@@ -29,16 +43,37 @@
     </div>
     <div class="page-body">
         <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery">
+            <input type="hidden" name="daily_price" value="<?php echo $price ?>">
             <h4>Order Type<span class="required">*</span></h4>
             <div class="form-section">
                 <div class="col-sm-4">
-                    <label for="fill"><input type="radio" name="fill" value="">Fill</label>
+                    <label for="fill"><input type="radio" name="order_type" value="fill">Fill</label>
                 </div>
                 <div class="col-sm-4">
-                    <label for="liters"><input type="radio" name="liters" value="">Liters</label>
+                    <label for="liters"><input type="radio" name="order_type" value="liters">Liters</label>
                 </div>
                 <div class="col-sm-4">
-                    <label for="amount"><input type="radio" name="amount" value="">Amount ($)</label>
+                    <label for="amount"><input type="radio" name="order_type" value="amount">Amount ($)</label>
+                </div>
+                <div class="row hidden-fields" id="liters-fields">
+                    <div class="liters_amount form-group col-sm-6">
+                        <label for="liters_amount">Quantity:</label>
+                        <input type="number" name="liters_amount" value="" class="form-control"><span> &times; $<?php echo $price ?> </span>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <p>Total: <span class="total"><p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group delivery-date">
+                        <label for="date">Requested Delivery Date <span class="required">*</span></label>
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type='text' class="form-control" name="date"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div style="clear:both;"></div>

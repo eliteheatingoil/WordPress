@@ -27,7 +27,7 @@
         @media (max-width: 991px) { 
             float: none;
             margin: 0px auto;
-            width: 588px;
+            width: 595px;
         }
 
         // information block
@@ -44,6 +44,7 @@
                 color: #989898;
                 font-weight: bold;
                 font-size: 14px;
+                @media (max-width: 991px) { text-align: center; }
             }
 
             &:nth-child(2) { border-left: 2px solid #ddd; }
@@ -77,5 +78,5 @@
 } 
 
 .navigation, .info{
-@media (max-width: 768px) { display: none;}
+    @media (max-width: 768px) { display: none;}
 }

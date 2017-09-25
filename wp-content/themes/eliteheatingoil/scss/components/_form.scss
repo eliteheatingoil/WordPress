@@ -4,6 +4,10 @@ form {
         margin-top: 20px;
     }
 
+    label{
+        font-weight: 100;
+    }
+
     .form-section{
         margin: 20px 0;
     }
@@ -79,4 +83,27 @@ form {
             &:nth-child(2){ right: 16px; }
         }
     }
+}
+
+#liters-fields {
+    margin: 20px 0;
+    border-bottom: 1px solid #e7e7e7;
+    
+    label{
+        width: 100%;
+    }
+
+    input{
+        width: 100px;
+        display: inline-block;
+        margin: 0px;
+    }
+
+    .liters_amount{
+        padding-top: 20px;
+    }
+}
+
+.delivery-date{
+    margin-top: 20px;
 }

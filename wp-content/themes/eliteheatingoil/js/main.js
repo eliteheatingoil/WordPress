@@ -9,39 +9,26 @@ $(document).ready(function(){
     autoplaySpeed: 3000,
   });
 
-  // /// ANIMATE CARDS ON LOAD ///
-  // $(".card").each(function() {
-  //   if ($(this).isOnScreen()) {
-  //     $(this).addClass("animated fadeInUp");
-  //     $(this).css('visibility', 'visible');
-  //   }
-  // });
+  $('#datetimepicker1').datetimepicker({
+    format: 'DD/MM/YYYY'
+  });
 
-  // /// ANIMATE SPECIAL OFFER ON LOAD ///
-  // if ($('.special-offer').isOnScreen()) {
-  //   $('.special-offer').addClass("animated fadeIn");
-  //   $('.special-offer').css('visibility', 'visible');
-  // }
+  $('input[name="order_type"]').each(function(){
+    $(this).change(function(){
+      var value = $(this).val();
+      $('.hidden-fields').hide();
+      $('#'+value+'-fields').show();
+    });
+  });
 
+  $('input[name="liters_amount"]').keyup(function(){
+    var value = $(this).val();
+    var price = $('input[name="daily_price"').val();
+    var total = value * price;
 
-  // /// ANIMATE CARDS AND SPECIAL OFFER ON SCROLL ///
-  // $(window).on('scroll', function() {
-  //   $(".card").each(function() {
-  //       if (isScrolledIntoView($(this))) {
-  //         if (!$(this).hasClass('animated')){
-  //           $(this).addClass("animated fadeInUp");
-  //           $(this).css('visibility', 'visible');
-  //         }
-  //       }
-  //   });
+    $('span.total').text('$' + total.toFixed(2));
+  });
 
-  //   if (isScrolledIntoView($('.special-offer'))) {
-  //     if( !$('.special-offer').hasClass('animated')){
-  //       $('.special-offer').addClass("animated fadeIn");
-  //       $('.special-offer').css('visibility', 'visible');
-  //     }
-  //   }
-  // });
 
   /// BURGER MENU CHANGE ///
   $('.burger-menu-btn').click(function(){
@@ -61,24 +48,3 @@ $(document).ready(function(){
   });
 
 });
-
-
-// function isScrolledIntoView(elem) {
-//   var docViewTop = $(window).scrollTop();
-//   var docViewBottom = docViewTop + $(window).height();
-
-//   var elemTop = $(elem).offset().top;
-//   var elemBottom = elemTop + $(elem).height();
-
-//   return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-// }
-
-// $.fn.isOnScreen = function(){
-//     var viewport = {};
-//     viewport.top = $(window).scrollTop();
-//     viewport.bottom = viewport.top + $(window).height();
-//     var bounds = {};
-//     bounds.top = this.offset().top;
-//     bounds.bottom = bounds.top + this.outerHeight();
-//     return ((bounds.top <= viewport.bottom) && (bounds.bottom >= viewport.top));
-// };

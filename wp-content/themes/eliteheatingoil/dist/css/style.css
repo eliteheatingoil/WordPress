@@ -281,6 +281,10 @@ form h4 {
   margin-top: 20px;
 }
 
+form label {
+  font-weight: 100;
+}
+
 form .form-section {
   margin: 20px 0;
 }
@@ -357,6 +361,29 @@ form input[type="submit"] {
   right: 16px;
 }
 
+#liters-fields {
+  margin: 20px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+#liters-fields label {
+  width: 100%;
+}
+
+#liters-fields input {
+  width: 100px;
+  display: inline-block;
+  margin: 0px;
+}
+
+#liters-fields .liters_amount {
+  padding-top: 20px;
+}
+
+.delivery-date {
+  margin-top: 20px;
+}
+
 .nav {
   padding: 10px;
   border-bottom: 5px solid #ff7b28;
@@ -425,7 +452,7 @@ form input[type="submit"] {
   .nav .information {
     float: none;
     margin: 0px auto;
-    width: 588px;
+    width: 595px;
   }
 }
 
@@ -443,6 +470,12 @@ form input[type="submit"] {
   color: #989898;
   font-weight: bold;
   font-size: 14px;
+}
+
+@media (max-width: 991px) {
+  .nav .information .info-block .info-label {
+    text-align: center;
+  }
 }
 
 .nav .information .info-block:nth-child(2) {
@@ -835,6 +868,10 @@ li {
 
 section {
   margin-bottom: 20px;
+}
+
+.hidden-fields {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
