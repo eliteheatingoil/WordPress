@@ -85,13 +85,13 @@ form {
     }
 }
 
-#liters-fields {
+.hidden-fields {
     margin: 20px 0;
     border-bottom: 1px solid #e7e7e7;
     
     label{
         width: 100%;
-    }
+    } 
 
     input{
         width: 100px;
@@ -106,4 +106,9 @@ form {
 
 .delivery-date{
     margin-top: 20px;
+}
+
+.g-recaptcha{
+    padding: 20px 0;
+    border-top: 1px solid #e7e7e7;
 }

@@ -21,14 +21,35 @@ $(document).ready(function(){
     });
   });
 
-  $('input[name="liters_amount"]').keyup(function(){
+  $('input[name="liters_amount"]').on('change keyup keydown',function(){
     var value = $(this).val();
     var price = $('input[name="daily_price"').val();
     var total = value * price;
-
-    $('span.total').text('$' + total.toFixed(2));
+    var span = $(this).parent().siblings('.form-group').find('span.total');
+    if (value >= 0){
+      span.text(total.toFixed(2) + 'Litres');
+    }
   });
 
+  $('input[name="amount"]').on('change keyup keydown',function(){
+    var value = $(this).val();
+    var price = $('input[name="daily_price"').val();
+    var total = value/price;
+    var span = $(this).parent().siblings('.form-group').find('span.total');
+    if (value >= 0){
+      span.text(total.toFixed(2) + 'Litres');
+    }
+  });
+
+  $(':radio[value=credit]').on('change', function(){
+    $('#credit_payment_methods').toggleClass('hidden'); 
+  });
+
+  $('.payment-method input').on('click', function(){
+    if ( !$('#credit_payment_methods').hasClass('hidden')){
+      $('#credit_payment_methods').addClass('hidden');
+    }
+  });
 
   /// BURGER MENU CHANGE ///
   $('.burger-menu-btn').click(function(){

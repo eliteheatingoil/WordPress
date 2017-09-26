@@ -361,27 +361,32 @@ form input[type="submit"] {
   right: 16px;
 }
 
-#liters-fields {
+.hidden-fields {
   margin: 20px 0;
   border-bottom: 1px solid #e7e7e7;
 }
 
-#liters-fields label {
+.hidden-fields label {
   width: 100%;
 }
 
-#liters-fields input {
+.hidden-fields input {
   width: 100px;
   display: inline-block;
   margin: 0px;
 }
 
-#liters-fields .liters_amount {
+.hidden-fields .liters_amount {
   padding-top: 20px;
 }
 
 .delivery-date {
   margin-top: 20px;
+}
+
+.g-recaptcha {
+  padding: 20px 0;
+  border-top: 1px solid #e7e7e7;
 }
 
 .nav {
@@ -870,7 +875,7 @@ section {
   margin-bottom: 20px;
 }
 
-.hidden-fields {
+.hidden-fields, .hidden {
   display: none;
 }
 

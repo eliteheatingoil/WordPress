@@ -1,7 +1,7 @@
 <?php include(get_template_directory() . '/services/request_delivery.php'); ?>
 <?php
 $the_query = new WP_Query(array(
-  'post_type'			=> 'oil_prices',
+  'post_type'			=> 'oil_price',
   'posts_per_page'	=> 1,
   'order'				=> 'DESC'
 ));
@@ -19,6 +19,7 @@ endif;
 <div class="container">
 
 <div class="page-content col-xs-12 col-sm-10 col-sm-offset-1">
+
     <?php if($emailSent): ?>
         <div class="alert alert-success">
             email sent
@@ -28,11 +29,13 @@ endif;
             email not sent
         </div>
     <?php endif; ?>
+
     <?php if($hasError): ?>
         <div class="alert alert-warning">
             error
         </div>
     <?php endif; ?>
+
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
         <li class="breadcrumb-item active"><?php the_title(); ?></li>
@@ -41,7 +44,9 @@ endif;
     <div class="page-title">
         <h1>Request a Delivery</h1>
     </div>
+
     <div class="page-body">
+
         <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery">
             <input type="hidden" name="daily_price" value="<?php echo $price ?>">
             <h4>Order Type<span class="required">*</span></h4>
@@ -50,7 +55,7 @@ endif;
                     <label for="fill"><input type="radio" name="order_type" value="fill">Fill</label>
                 </div>
                 <div class="col-sm-4">
-                    <label for="liters"><input type="radio" name="order_type" value="liters">Liters</label>
+                    <label for="liters"><input type="radio" name="order_type" value="liters">Litres</label>
                 </div>
                 <div class="col-sm-4">
                     <label for="amount"><input type="radio" name="order_type" value="amount">Amount ($)</label>
@@ -59,6 +64,15 @@ endif;
                     <div class="liters_amount form-group col-sm-6">
                         <label for="liters_amount">Quantity:</label>
                         <input type="number" name="liters_amount" value="" class="form-control"><span> &times; $<?php echo $price ?> </span>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <p>Total: <span class="total"><p>
+                    </div>
+                </div>
+                <div class="row hidden-fields" id="amount-fields">
+                    <div class="liters_amount form-group col-sm-6">
+                        <label for="liters_amount">Dollars:</label>
+                        $<input type="number" min="1" name="amount" value="" class="form-control">
                     </div>
                     <div class="form-group col-sm-12">
                         <p>Total: <span class="total"><p>
@@ -115,18 +129,24 @@ endif;
             <div class="form-section">
                 <div class="col-sm-12 form-group payment-method">
                     <p>Please choose your payment method below.</p>
-                    
                     <label for="payment_method">
-                        <input type="radio" name="payment_method" value="" required>Visa (on file)
+                        <input type="radio" name="payment_method" value="cash" required>Cash (at the door)
                     </label>
                     <label for="payment_method">
-                        <input type="radio" name="payment_method" value="" required>Mastercard (on file)
+                        <input type="radio" name="payment_method" value="debit" required>Debit (at the door)
                     </label>
                     <label for="payment_method">
-                        <input type="radio" name="payment_method" value="" required>Debit
+                        <input type="radio" name="payment_method" value="credit" required>Credit Card (Visa & Mastercad)
                     </label>
+                    <div class="col-sm-4 hidden" id="credit_payment_methods">
+                        <select class="form-control">
+                            <option value="">--- Select an option ---</option>
+                            <option value="at_the_door">At the door</option>
+                            <option value="over_the_phone">Over the phone</option>
+                        </select>
+                    </div>
                     <label for="payment_method">
-                        <input type="radio" name="payment_method" value="" required>Email Money Transfer
+                        <input type="radio" name="payment_method" value="interac" required>Interac E-Transfer (2 cents per litre discount)
                     </label>
                 </div>
             </div>
@@ -161,6 +181,7 @@ endif;
                 <input type="submit" name="submit" class="btn btn-primary" value="Submit">
             </div>
         </form>
+
     </div>
 </div>
 
