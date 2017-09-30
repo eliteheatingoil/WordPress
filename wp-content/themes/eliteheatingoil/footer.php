@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="copyright">
-      <em>Copyright 2017 Elite Heating Oil, All Rights Reserved.</em>
+      <em>Copyright 2017 Elite Heating Oil, All Rights Reserved. | PO BOX 28134 Tacoma, Dartmouth, NS, B2W3E0</em>
     </div>
     </footer>
 
