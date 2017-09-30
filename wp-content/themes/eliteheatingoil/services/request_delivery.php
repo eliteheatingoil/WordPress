@@ -43,19 +43,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $credit_options = stripslashes(trim($_POST['credit_options']));
 
         if ($credit_options){
-            $payment_method = $payment_method . ' ' . $credit_options;
+            $payment_method = $payment_method . ' - ' . $credit_options;
         }
 
         $todays_price = stripslashes(trim($_POST['daily_price']));
 
         if($total_litres){
-            $total = '$' . round($total_litres * $todays_price);
+            $total = '$' . round(($total_litres * $todays_price), 2);
             $unit = 'Litres';
             $unit_value = $total_litres;
         }
 
         if($dollars){
-            $total = round( $dollars/$todays_price, 2) . ' Litres';
+            $total = round( ($dollars/$todays_price), 2) . ' Litres';
             $unit = 'Dollars';
             $unit_value = '$' . $dollars;
         }
