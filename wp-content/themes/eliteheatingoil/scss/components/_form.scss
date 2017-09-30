@@ -36,6 +36,10 @@ form {
     width: 320px;
     text-align: center;
 
+    @media (max-width: 388px){
+        width: 250px;
+    }
+
     .location-wrapper, .home{
         display: inline-block;
         position: relative;
@@ -84,6 +88,11 @@ form {
             &:nth-child(1) {left: 16px; }
 
             &:nth-child(2){ right: 16px; }
+
+            @media (max-width: 388px){
+                font-size: 35px;
+                top: -2px;
+            }
         }
     }
 }
@@ -111,7 +120,13 @@ form {
     margin-top: 20px;
 }
 
-.g-recaptcha{
+.g-recaptcha-wrapper{
     padding: 20px 0;
     border-top: 1px solid #e7e7e7;
+}
+
+form .form-group .btn-orange.form-orange{
+    position: absolute;
+    margin-bottom: 20px;
+    margin-top: 0px;
 }

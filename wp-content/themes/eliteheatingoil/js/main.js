@@ -25,7 +25,7 @@ $(document).ready(function(){
     });
   });
 
-  $('input[name="litres_amount"]').on('change keyup keydown',function(){
+  $('input[name="litres_amount"]').on('change keyup keydown input',function(){
     var value = $(this).val();
     var price = $('input[name="daily_price"').val();
     var total = value * price;
@@ -36,7 +36,7 @@ $(document).ready(function(){
     }
   });
 
-  $('input[name="amount"]').on('change keyup keydown',function(){
+  $('input[name="amount"]').on('change keyup keydown input',function(){
     var value = $(this).val();
     var price = $('input[name="daily_price"').val();
     var total = value/price;
@@ -47,7 +47,7 @@ $(document).ready(function(){
     }
   });
 
-  $(':radio[value=credit]').on('change', function(){
+  $(':radio[value="Credit Card"]').on('change', function(){ 
     $('#credit_payment_methods').toggleClass('hidden'); 
     $('#credit_payment_methods select').prop('required',true); 
   });

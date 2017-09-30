@@ -20,6 +20,7 @@ Tags: bootstrap
 .btn-orange:hover {
   background-color: #ff9654;
   margin-top: -2px !important;
+  margin-bottom: 2px !important;
   color: white;
 }
 
@@ -311,6 +312,12 @@ form input[type="submit"] {
   text-align: center;
 }
 
+@media (max-width: 388px) {
+  .location-widget {
+    width: 250px;
+  }
+}
+
 .location-widget .location-wrapper, .location-widget .home {
   display: inline-block;
   position: relative;
@@ -363,6 +370,13 @@ form input[type="submit"] {
   right: 16px;
 }
 
+@media (max-width: 388px) {
+  .location-widget .street .road-dots {
+    font-size: 35px;
+    top: -2px;
+  }
+}
+
 .hidden-fields {
   margin: 20px 0;
   border-bottom: 1px solid #e7e7e7;
@@ -386,9 +400,15 @@ form input[type="submit"] {
   margin-top: 20px;
 }
 
-.g-recaptcha {
+.g-recaptcha-wrapper {
   padding: 20px 0;
   border-top: 1px solid #e7e7e7;
+}
+
+form .form-group .btn-orange.form-orange {
+  position: absolute;
+  margin-bottom: 20px;
+  margin-top: 0px;
 }
 
 .nav {

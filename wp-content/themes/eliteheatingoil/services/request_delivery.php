@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if ($resp->success != true) {
         // What happens when the CAPTCHA was entered incorrectly
-        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again. (" . $recaptchaResponse . ")" );
+        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." );
     } else {
 	
         function clean_string($string) {
@@ -48,13 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $todays_price = stripslashes(trim($_POST['daily_price']));
 
         if($total_litres){
-            $total = '$' . $total_litres*$todays_price;
+            $total = '$' . round($total_litres * $todays_price);
             $unit = 'Litres';
             $unit_value = $total_litres;
         }
 
         if($dollars){
-            $total = $dollars/$todays_price . ' Litres';
+            $total = round( $dollars/$todays_price, 2) . ' Litres';
             $unit = 'Dollars';
             $unit_value = '$' . $dollars;
         }
@@ -95,7 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class='content'>
 
                         <!-- START CENTERED WHITE CONTAINER -->
-                        <span class='preheader'>This is preheader text. Some clients will show this text as a preview.</span>
                         <table class='main'>
 
                         <!-- START MAIN CONTENT AREA -->
@@ -162,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                             <table border='0' cellpadding='0' cellspacing='0'>
                                             <tbody>
                                                 <tr><td class='label'>Payment Information: </td></tr>
-                                                <tr><td class='bullet'>&bull; Type: {$payment_method} - At the door</td></tr>
+                                                <tr><td class='bullet'>Method: {$payment_method} - At the door</td></tr>
                                                 <tr><td class='bullet'>{$unit}: {$unit_value}</td></tr>
                                                 <tr><td class='bullet'>Today's Price: {$todays_price}</td></tr>
                                                 <tr><td class='bullet total'>Total: {$total}</td></tr>

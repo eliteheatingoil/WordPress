@@ -23,17 +23,17 @@ endif;
 
     <?php if($emailSent): ?>
         <div class="alert alert-success">
-            email sent
+            Your delivery request has been submitted!
         </div>
     <?php elseif ($emailFailed): ?>
         <div class="alert alert-danger">
-            email not sent
+            There was an error submitting your delivery request. Please try again.
         </div>
     <?php endif; ?>
 
     <?php if($hasError): ?>
         <div class="alert alert-warning">
-            error
+            There was an error submitting your delivery request. Please try again.
         </div>
     <?php endif; ?>
 
@@ -191,10 +191,12 @@ endif;
             </div>
             <div style="clear:both;"></div>
 
-            <div class="g-recaptcha" data-sitekey="6Lfp1jEUAAAAAIl0IET0Vkjr0v-gub9m2QCpW5Tq"></div>
+            <div class="g-recaptcha-wrapper">
+<div class="g-recaptcha" data-sitekey="6Lfp1jEUAAAAAIl0IET0Vkjr0v-gub9m2QCpW5Tq" style="transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+            </div>
 
             <div class="form-group">
-                <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+                <input type="submit" name="submit" class="btn btn-orange form-orange" value="Submit">
             </div>
         </form>
 
