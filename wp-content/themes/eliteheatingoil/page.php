@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php get_template_part('partials/hero'); ?>
+<?php get_template_part('partials/todays-price'); ?>
 <div class="container">
 
 <div class="page-content col-xs-12 col-sm-10 col-sm-offset-1">
