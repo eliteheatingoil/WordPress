@@ -54,9 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         if($dollars){
-            $total = '$' . $dollars/$todays_price;
+            $total = $dollars/$todays_price . ' Litres';
             $unit = 'Dollars';
-            $unit_value = $dollars;
+            $unit_value = '$' . $dollars;
         }
 
         $special_instructions = stripslashes(trim($_POST['special_instructions']));
