@@ -281,8 +281,13 @@ form h4 {
   margin-top: 20px;
 }
 
+form textarea {
+  height: 200px !important;
+}
+
 form .form-section {
   margin: 20px 0;
+  padding: 20px 0 30px;
 }
 
 form input[type="radio"] {
@@ -302,7 +307,7 @@ form input[type="submit"] {
 }
 
 .location-widget {
-  width: 300px;
+  width: 320px;
   text-align: center;
 }
 
@@ -332,7 +337,8 @@ form input[type="submit"] {
 }
 
 .location-widget .location-back, .location-widget .location-front {
-  width: 100%;
+  width: 49%;
+  display: inline-block;
 }
 
 .location-widget .street {
@@ -372,7 +378,7 @@ form input[type="submit"] {
   margin: 0px;
 }
 
-.hidden-fields .liters_amount {
+.hidden-fields .litres_amount {
   padding-top: 20px;
 }
 

@@ -4,8 +4,13 @@ form {
         margin-top: 20px;
     }
 
+    textarea{
+        height: 200px !important;
+    }
+
     .form-section{
         margin: 20px 0;
+        padding: 20px 0 30px;
     }
 
     input[type="radio"]{
@@ -28,7 +33,7 @@ form {
 }
 
 .location-widget{
-    width: 300px;
+    width: 320px;
     text-align: center;
 
     .location-wrapper, .home{
@@ -59,8 +64,10 @@ form {
     }
 
     .location-back, .location-front{
-        width: 100%;
+        width: 49%;
+        display: inline-block;
     }
+
 
     .street{ 
         background-color: #4f4f4f;
@@ -95,7 +102,7 @@ form {
         margin: 0px;
     }
 
-    .liters_amount{
+    .litres_amount{
         padding-top: 20px;
     }
 }
