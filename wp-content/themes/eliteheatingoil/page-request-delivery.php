@@ -1,7 +1,7 @@
 <?php include(get_template_directory() . '/services/request_delivery.php'); ?>
 <?php
 $the_query = new WP_Query(array(
-  'post_type'			=> 'oil_price',
+  'post_type'			=> 'oil_prices',
   'posts_per_page'	=> 1,
   'order'				=> 'DESC'
 ));
