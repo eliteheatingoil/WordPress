@@ -47,16 +47,16 @@ $(document).ready(function(){
     }
   });
 
-  $(':radio[value="Credit Card"]').on('change', function(){ 
-    $('#credit_payment_methods').toggleClass('hidden'); 
-    $('#credit_payment_methods select').prop('required',true); 
-  });
-
-  $('.payment-method input').on('click', function(){
+  $('.payment-method input').on('change', function(){
     if ( !$('#credit_payment_methods').hasClass('hidden')){
       $('#credit_payment_methods').addClass('hidden');
       $('#credit_payment_methods select').prop('required',false); 
     }
+  });
+
+  $(':radio[value="Credit Card"]').on('change', function(){ 
+    $('#credit_payment_methods').toggleClass('hidden'); 
+    $('#credit_payment_methods select').prop('required',true); 
   });
 
   /// BURGER MENU CHANGE ///
