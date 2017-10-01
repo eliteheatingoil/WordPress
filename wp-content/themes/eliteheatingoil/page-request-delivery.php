@@ -39,7 +39,7 @@ endif;
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-        <li class="breadcrumb-item active"><?php the_title(); ?></li>
+        <li class="breadcrumb-item active">Request a Delivery</li>
     </ol>
 
     <div class="page-title">

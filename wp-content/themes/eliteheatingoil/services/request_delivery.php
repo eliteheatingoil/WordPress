@@ -48,15 +48,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $todays_price = stripslashes(trim($_POST['daily_price']));
 
-        if($total_litres){
+        if($order_type == 'fill'){
+            $total = 'Fill';
+            $unit = '';
+            $unit_value = '';
+        }
+
+        else if($total_litres){
             $total = '$' . round(($total_litres * $todays_price), 2);
-            $unit = 'Litres';
+            $unit = 'Litres: ';
             $unit_value = $total_litres;
         }
 
-        if($dollars){
+        else if($dollars){
             $total = round( ($dollars/$todays_price), 2) . ' Litres';
-            $unit = 'Dollars';
+            $unit = 'Dollars: ';
             $unit_value = '$' . $dollars;
         }
 
@@ -164,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                                 <tr><td class='label'>Order Information: </td></tr>
                                                 <tr><td class='bullet'>Delivery Date: {$date}</td></tr>
                                                 <tr><td class='bullet'>Method: {$payment_method}</td></tr>
-                                                <tr><td class='bullet'>{$unit}: {$unit_value}</td></tr>
+                                                <tr><td class='bullet'>{$unit}{$unit_value}</td></tr>
                                                 <tr><td class='bullet'>Today's Price: {$todays_price}</td></tr>
                                                 <tr><td class='bullet'>----------------------------</td></tr>
                                                 <tr><td class='bullet total'>Total: {$total}</td></tr>
