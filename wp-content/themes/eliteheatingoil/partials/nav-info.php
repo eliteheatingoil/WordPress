@@ -24,6 +24,6 @@
         <span>Email us</span>
     </div>
     <div class="info-body">
-        <a href="mailto:example@eliteheatingoil.ca">example@eliteheatingoil.ca</a>
+        <a href="mailto:support@eliteheatingoil.ca">support@eliteheatingoil.ca</a>
     </div>
 </div>
