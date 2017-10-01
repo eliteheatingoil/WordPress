@@ -10,7 +10,7 @@ $(document).ready(function(){
   // });
 
   $('#datetimepicker1').datetimepicker({
-    format: 'MM/DD/YYYY'
+    format: 'MM/DD/YYYY' 
   });
 
   $('input[name="order_type"]').each(function(){
