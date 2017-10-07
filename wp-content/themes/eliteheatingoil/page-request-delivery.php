@@ -70,28 +70,28 @@ endif;
                         <input type="number" name="litres_amount" value="" class="form-control"><span> &times; $<?php echo $price ?> </span>
                     </div>
                     <div class="form-group col-xs-4">
-                        <p>Subtotal: <span class="sub-total"></span><p>
+                        <p>Subtotal: <span class="sub-total"></span></p>
                     </div>
                     <div class="form-group col-xs-4">
-                        <p>Tax (5%): <span class="tax"></span><p>
+                        <p>Tax (5%): <span class="tax"></span></p>
                     </div>                                        
                     <div class="form-group col-xs-4">
-                        <p>Total: <span class="total"></span><p>
+                        <p>Total: <span class="total"></span></p>
                     </div>
                 </div>
                 <div class="row hidden-fields" id="amount-fields">
                     <div class="litres_amount form-group col-sm-12">
                         <label for="amount">Dollars: <span class="required">*</span></label>
-                        $<input type="number" min="1" name="amount" value="" class="form-control">
+                        $ <input type="number" min="1" name="amount" value="" class="form-control">
                     </div>
                     <div class="form-group col-xs-4">
-                        <p>Subtotal: <span class="sub-total"></span><p>
+                        <p>Subtotal: <span class="sub-total"></span></p>
                     </div>
                     <div class="form-group col-xs-4">
-                        <p>Tax (5%): <span class="tax"></span><p>
+                        <p>Tax (5%): <span class="tax"></span></p>
                     </div>                                        
                     <div class="form-group col-xs-4">
-                        <p>Total Litres: <span class="total"></span><p>
+                        <p>Total Litres: <span class="total"></span></p>
                     </div>
                 </div>
                 <div class="col-sm-4">
