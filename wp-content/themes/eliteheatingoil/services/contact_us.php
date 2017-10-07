@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $last_name    = stripslashes(trim($_POST['last_name']));
         $email   = stripslashes(trim($_POST['email']));
         $phone   = stripslashes(trim($_POST['phone']));
+        $subject    = stripslashes(trim($_POST['subject']));
         $special_instructions = stripslashes(trim($_POST['special_instructions']));
 
         $subject = 'Contact Message';    
@@ -99,12 +100,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                         <td align='left'>
                                             <table border='0' cellpadding='0' cellspacing='0'>
                                             <tbody>
+                                                <tr><td class='label'>Subject: </td></tr>
+                                                <tr><td>{$subject}</td></tr>
+                                            </tbody>
+                                            </table>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td align='left'>
+                                            <table border='0' cellpadding='0' cellspacing='0'>
+                                            <tbody>
                                                 <tr><td class='label'>Message: </td></tr>
                                                 <tr><td>{$special_instructions}</td></tr>
                                             </tbody>
                                             </table>
                                         </td>
-                                        </tr>
+                                        </tr>                                        
                                     </tbody>
                                     </table>
 

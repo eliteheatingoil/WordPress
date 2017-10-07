@@ -59,10 +59,14 @@
             <div style="clear:both;"></div>
             </div>
 
-            <h4>Message <span class="required">*</span></h4>
+            <h4>Message</h4>
             <div class="form-section">
             <div class="form-group">
-                <label for="special_instructions" class="sr-only">Special Instructions</label>
+                <label for="subject">Subject <span class="required">*</span></label>
+                <input type="text" class="form-control" name="subject" required></input>
+            </div>
+            <div class="form-group">
+                <label for="special_instructions">Body <span class="required">*</span></label>
                 <textarea class="form-control" name="special_instructions" required></textarea>
             </div>
             </div>
