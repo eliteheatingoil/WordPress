@@ -707,6 +707,7 @@ footer .copyright {
   background-color: #1d4b97;
   padding: 40px 0;
   z-index: 9999;
+  border-bottom: 5px solid #ff7b28;
 }
 
 .hero-slider .slide img {
@@ -899,6 +900,12 @@ section {
 
 .hidden-fields, .hidden {
   display: none;
+}
+
+.alert-grey {
+  color: #333333;
+  background-color: #f3f3f3;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

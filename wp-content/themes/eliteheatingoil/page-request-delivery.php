@@ -1,7 +1,7 @@
 <?php include(get_template_directory() . '/services/request_delivery.php'); ?>
 <?php
 $the_query = new WP_Query(array(
-  'post_type'			=> 'oil_prices',
+  'post_type'			=> 'oil_price',
   'posts_per_page'	=> 1,
   'order'				=> 'DESC'
 ));
@@ -52,31 +52,46 @@ endif;
             <input type="hidden" name="daily_price" value="<?php echo $price ?>">
             <h4>Order Type <span class="required">*</span></h4>
             <div class="form-section">
-                <div class="col-sm-4">
-                    <label for="fill"><input type="radio" name="order_type" value="fill" required>Fill</label>
+                <div class="col-md-12 alert alert-grey">
+                    Minimum order of $200.
                 </div>
                 <div class="col-sm-4">
-                    <label for="litres"><input type="radio" name="order_type" value="litres" required>Litres</label>
+                    <label for="fill"><input type="radio" name="order_type" id="fill" value="fill" required>Fill</label>
                 </div>
                 <div class="col-sm-4">
-                    <label for="amount"><input type="radio" name="order_type" value="amount" required>Amount ($)</label>
+                    <label for="litres"><input type="radio" name="order_type" id="litres" value="litres" required>Litres</label>
+                </div>
+                <div class="col-sm-4">
+                    <label for="amount"><input type="radio" name="order_type" id="amount" value="amount" required>Amount ($)</label>
                 </div>
                 <div class="row hidden-fields" id="litres-fields">
-                    <div class="litres_amount form-group col-sm-6">
+                    <div class="litres_amount form-group col-sm-12">
                         <label for="litres_amount">Quantity: <span class="required">*</span></label>
                         <input type="number" name="litres_amount" value="" class="form-control"><span> &times; $<?php echo $price ?> </span>
                     </div>
-                    <div class="form-group col-sm-12">
-                        <p>Total: <span class="total"><p>
+                    <div class="form-group col-xs-4">
+                        <p>Subtotal: <span class="sub-total"></span><p>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <p>Tax (5%): <span class="tax"></span><p>
+                    </div>                                        
+                    <div class="form-group col-xs-4">
+                        <p>Total: <span class="total"></span><p>
                     </div>
                 </div>
                 <div class="row hidden-fields" id="amount-fields">
-                    <div class="litres_amount form-group col-sm-6">
+                    <div class="litres_amount form-group col-sm-12">
                         <label for="amount">Dollars: <span class="required">*</span></label>
                         $<input type="number" min="1" name="amount" value="" class="form-control">
                     </div>
-                    <div class="form-group col-sm-12">
-                        <p>Total: <span class="total"><p>
+                    <div class="form-group col-xs-4">
+                        <p>Subtotal: <span class="sub-total"></span><p>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <p>Tax (5%): <span class="tax"></span><p>
+                    </div>                                        
+                    <div class="form-group col-xs-4">
+                        <p>Total Litres: <span class="total"></span><p>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -90,8 +105,8 @@ endif;
                         </div>
                     </div>
                 </div>
-            </div>
             <div style="clear:both;"></div>
+            </div>
 
             <h4>Contact Information</h4>
             <div class="form-section">
@@ -123,8 +138,8 @@ endif;
                     <label for="phone">Phone <span class="required">*</span> <span class="text-muted">(&times;&times;&times;-&times;&times;&times;-&times;&times;&times;&times;)</span></label>
                     <input type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="phone" value="" class="form-control" required>
                 </div>
-            </div>
             <div style="clear:both;"></div>
+            </div>
 
             <h4>Payment Information <span class="required">*</span></h4>
             <div class="form-section">
@@ -150,8 +165,8 @@ endif;
                         <input type="radio" name="payment_method" value="interac" required>Interac E-Transfer (2 cents per litre discount)
                     </label>
                 </div>
-            </div>
             <div style="clear:both;"></div>
+            </div>
 
             <h4>Tank Location <span class="required">*</span></h4>
             <div class="form-section">
@@ -179,8 +194,8 @@ endif;
                         <span> <span class="road-dots">- - -</span> ROAD <span class="road-dots">- - -</span></span>
                     </div>
                 </div>
-            </div>
             <div style="clear:both;"></div>
+            </div>
 
             <h4>Special Instructions</h4>
             <div class="form-section">

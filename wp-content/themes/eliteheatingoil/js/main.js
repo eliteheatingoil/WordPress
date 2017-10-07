@@ -16,6 +16,9 @@ $(document).ready(function(){
   $('input[name="order_type"]').each(function(){
     $(this).change(function(){
       var value = $(this).val();
+      // clear all values
+      $(this).parent().parent().siblings('.hidden-fields').find('span').text("");
+      $(this).parent().parent().siblings('.hidden-fields').find('input').val("");
       // hide everything and remove required
       $('.hidden-fields').hide();
       $('.hidden-fields input').prop('required',false);
@@ -28,22 +31,46 @@ $(document).ready(function(){
   $('input[name="litres_amount"]').on('change keyup keydown input',function(){
     var value = $(this).val();
     var price = $('input[name="daily_price"').val();
-    var total = value * price;
-    var span = $(this).parent().siblings('.form-group').find('span.total');
+    var span_sub_total = $(this).parent().siblings('.form-group').find('span.sub-total');
+    var span_tax = $(this).parent().siblings('.form-group').find('span.tax');
+    var span_total = $(this).parent().siblings('.form-group').find('span.total');
+
+    // generate subtotal
+    var sub_total = value * price;
+
+    // tax
+    var tax = sub_total * .05;
+
+    // total
+    var total = sub_total + tax;
 
     if (value >= 0){
-      span.text('$'+total.toFixed(2));
+      span_sub_total.text('$'+sub_total.toFixed(2));
+      span_tax.text('$'+tax.toFixed(2));
+      span_total.text('$'+total.toFixed(2));
     }
   });
 
   $('input[name="amount"]').on('change keyup keydown input',function(){
     var value = $(this).val();
     var price = $('input[name="daily_price"').val();
-    var total = value/price;
-    var span = $(this).parent().siblings('.form-group').find('span.total');
+    var span_sub_total = $(this).parent().siblings('.form-group').find('span.sub-total');
+    var span_tax = $(this).parent().siblings('.form-group').find('span.tax');
+    var span_total = $(this).parent().siblings('.form-group').find('span.total');
+
+    // get divisor of 5% tax rate
+    var diviser = (5/100) + 1;
+
+    var sub_total = value/diviser;
+    
+    var tax = value-sub_total;
+
+    var total = sub_total/price;
 
     if (value >= 0){
-      span.text(total.toFixed(2) + ' Litres');
+      span_sub_total.text('$'+sub_total.toFixed(2));
+      span_tax.text('$'+tax.toFixed(2));
+      span_total.text(total.toFixed(2) + 'L');
     }
   });
 

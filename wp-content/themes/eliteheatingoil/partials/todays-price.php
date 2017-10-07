@@ -1,6 +1,6 @@
 <?php
 $the_query = new WP_Query(array(
-  'post_type'			=> 'oil_prices',
+  'post_type'			=> 'oil_price',
   'posts_per_page'	=> 1,
   'order'				=> 'DESC'
 ));
