@@ -9,17 +9,19 @@
 
     <?php if($emailSent): ?>
         <div class="alert alert-success">
-            Your delivery request has been submitted!
+            Your message has been submitted!
+
+            We will get back to you as soon as we can.
         </div>
     <?php elseif ($emailFailed): ?>
         <div class="alert alert-danger">
-            There was an error submitting your delivery request. Please try again.
+            There was an error submitting your contact message. Please try again.
         </div>
     <?php endif; ?>
 
     <?php if($hasError): ?>
         <div class="alert alert-warning">
-            There was an error submitting your delivery request. Please try again.
+            There was an error submitting your contact message. Please try again.
         </div>
     <?php endif; ?>
 
@@ -34,7 +36,7 @@
 
     <div class="page-body">
 
-        <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery">
+        <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>contact-us">
 
             <h4>Contact Information</h4>
             <div class="form-section">
