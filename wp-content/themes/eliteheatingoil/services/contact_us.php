@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $email   = stripslashes(trim($_POST['email']));
         $phone   = stripslashes(trim($_POST['phone']));
         $subject    = stripslashes(trim($_POST['subject']));
-        $special_instructions = stripslashes(trim($_POST['special_instructions']));
+        $special_instructions = nl2br(stripslashes(trim($_POST['special_instructions'])));
 
         $subject = 'Contact Message';    
         $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';

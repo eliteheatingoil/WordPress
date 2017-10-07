@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $unit_value = '$' . $dollars;
         }
 
-        $special_instructions = stripslashes(trim($_POST['special_instructions']));
+        $special_instructions = nl2br(stripslashes(trim($_POST['special_instructions'])));
 
         $subject = 'Delivery Request';    
         $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';
