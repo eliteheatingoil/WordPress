@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if ($first_name && $last_name && $email && $special_instructions) {
             $logo_path = get_bloginfo( 'template_directory' ) . '/images/blue_long_logo.png';
             
-            $email_to = $email; // your email address send TO
+            $email_to = 'contact@eliteheatingoil.ca'; // your email address send TO
             $email_from = "support@eliteheatingoil.ca"; // your email address send FROM
 
             $body = "
