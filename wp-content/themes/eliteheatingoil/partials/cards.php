@@ -65,15 +65,16 @@
           </div>
           <div class="card-body">
             <p>
-            Elite Heating Oil is a locally owned and family operated company
-            providing the highest quality furnace oil, delivered to your home or business.
+            Here you will find answers to our most frequently asked questions.
             </p>
             <p>
-            Our prices are industry leading and our goal is to give back to our community each and every day, year round.
+            Elite Heating Oil is committed to being completely transparent about our operations.</p> 
+            <p>
+            If you are unable to find the answers you are looking for please do not hesitate to <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact-us">Contact Us.</a>
             </p>
           </div>
           <div class="card-footer text-center">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>FAQs"><button type="button" class="btn btn-more">Read More</button></a>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>frequentlyaskedquestions"><button type="button" class="btn btn-more">Read More</button></a>
           </div>
         </div>
       </div>
