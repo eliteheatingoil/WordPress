@@ -74,7 +74,7 @@
             </p>
           </div>
           <div class="card-footer text-center">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>frequentlyaskedquestions"><button type="button" class="btn btn-more">Read More</button></a>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>frequently-asked-questions"><button type="button" class="btn btn-more">Read More</button></a>
           </div>
         </div>
       </div>
