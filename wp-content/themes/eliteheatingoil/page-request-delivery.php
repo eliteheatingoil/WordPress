@@ -159,6 +159,7 @@ endif;
                             <option value="">--- Select an option ---</option>
                             <option value="At the door">At the door</option>
                             <option value="Over the phone">Over the phone</option>
+                            <option value="Over the phone">Information on file</option>
                         </select>
                     </div>
                     <label for="payment_method">

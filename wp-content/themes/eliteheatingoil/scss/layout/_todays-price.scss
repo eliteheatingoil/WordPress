@@ -10,9 +10,11 @@
   .content{
     height: 205px;
     background-image: url("../../images/truck.png");
-    background-position: center;
+    background-position: left;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @media (min-width: 576px) { background-position: center; }
   }
 
   .message{
@@ -27,11 +29,11 @@
 
     @media (min-width: 320px) { width: 258px; }
 
-    @media (min-width: 576px) { right:50px; left:auto;}
+    @media (min-width: 576px) { left:50px; right:auto;}
 
-    @media (min-width: 992px) { right:80px; }
+    @media (min-width: 992px) { left:80px; }
 
-    @media (min-width: 1200px) { right:115px; }
+    @media (min-width: 1200px) { left:115px; }
   }
 }
 

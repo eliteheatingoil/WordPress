@@ -744,10 +744,16 @@ footer .copyright {
 .price-slice .content {
   height: 205px;
   background-image: url("../../images/truck.png");
-  background-position: center;
+  background-position: left;
   -webkit-background-size: cover;
           background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 576px) {
+  .price-slice .content {
+    background-position: center;
+  }
 }
 
 .price-slice .message {
@@ -769,20 +775,20 @@ footer .copyright {
 
 @media (min-width: 576px) {
   .price-slice .message {
-    right: 50px;
-    left: auto;
+    left: 50px;
+    right: auto;
   }
 }
 
 @media (min-width: 992px) {
   .price-slice .message {
-    right: 80px;
+    left: 80px;
   }
 }
 
 @media (min-width: 1200px) {
   .price-slice .message {
-    right: 115px;
+    left: 115px;
   }
 }
 
