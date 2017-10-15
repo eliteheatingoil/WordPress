@@ -1,0 +1,62 @@
+.card{
+    width: 100%;
+    border: 2px solid #f1f1f1;
+    margin-bottom: 15px;
+
+    .card-header{
+        background-color: #f1f1f1;
+        padding: 0.3rem;
+
+        h3{
+            margin: 0px;
+        }
+    }
+
+    .card-body{
+        padding: 20px;
+        height: 225px;
+
+        ul{
+            list-style: none;
+        }
+
+    }
+
+    .card-footer{
+        padding: 10px;
+    }
+
+    .and-more{
+        margin: 10px;
+    }
+
+    button{
+        @media (max-width: 768px) { width: 300px;}
+        @media (max-width: 412px) { width: 100%;}
+    }
+
+
+}
+
+.card-about { animation-delay: 400ms; }
+.card-services { animation-delay: 500ms; }
+
+.card-about, .card-services{
+    .card-body{
+        @media (max-width: 991px) { height: 215px;}
+        @media (max-width: 768px) { height: auto;}
+    }
+}
+
+.card-faqs { 
+    animation-delay: 600ms; 
+
+    .card-body{
+        @media (max-width: 991px) { height: auto;}
+    }
+
+    button{
+        @media (max-width: 991px) { width: 300px;}
+        @media (max-width: 412px) { width: 100%;}
+    }
+}

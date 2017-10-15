@@ -1,0 +1,132 @@
+form {
+    h4{
+        border-bottom: 1px solid grey;
+        margin-top: 20px;
+    }
+
+    textarea{
+        height: 200px !important;
+    }
+
+    .form-section{
+        margin: 20px 0;
+        padding: 20px 0 30px;
+    }
+
+    input[type="radio"]{
+        margin-right: 5px;
+    }
+
+    .required{
+        color: red;
+    }
+
+    .payment-method{
+        label{
+            width: 100%;
+        }
+    }
+
+    input[type="submit"]{
+        margin-top: 20px;
+    }
+}
+
+.location-widget{
+    width: 320px;
+    text-align: center;
+
+    @media (max-width: 388px){
+        width: 250px;
+    }
+
+    .location-wrapper, .home{
+        display: inline-block;
+        position: relative;
+    }
+
+    .home{
+        width: 80%;
+        background-color: $blue;
+        color: white; 
+        height: 150px;
+        padding-top: 60px;
+    }
+
+    .location-wrapper{
+        text-align: center;
+    }
+
+    .location-left, .location-right{
+        width: 5%;
+    }
+
+    .location-left{
+        input[type="radio"]{
+            left: -3px;
+        }
+    }
+
+    .location-back, .location-front{
+        width: 49%;
+        display: inline-block;
+    }
+
+
+    .street{ 
+        background-color: #4f4f4f;
+        color: white;
+        width: 90%;
+        height: 50px;
+        padding-top: 15px;
+
+        .road-dots{
+            position: absolute;
+            font-size: 50px;
+            top: -12px;
+
+            &:nth-child(1) {left: 16px; }
+
+            &:nth-child(2){ right: 16px; }
+
+            @media (max-width: 388px){
+                font-size: 35px;
+                top: -2px;
+            }
+        }
+    }
+}
+
+.hidden-fields {
+    margin: 20px 0;
+    border-bottom: 1px solid #e7e7e7;
+    
+    label{
+        width: 100%;
+    } 
+
+    input{
+        width: 100px;
+        display: inline-block;
+        margin: 0px;
+    }
+
+    .litres_amount{
+        padding-top: 20px;
+    }
+}
+
+.delivery-date{
+    margin-top: 20px;
+}
+
+.g-recaptcha-wrapper{
+    padding: 20px 0;
+    border-top: 1px solid #e7e7e7;
+}
+
+form .form-group .btn-orange.form-orange{
+    position: absolute;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}

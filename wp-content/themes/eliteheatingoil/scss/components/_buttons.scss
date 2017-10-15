@@ -1,0 +1,35 @@
+.btn-orange{
+    background-color: $orange;
+    color: #fff;
+    padding: 6px 14px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-bottom: 4px solid $orange-shadow;
+    text-transform: uppercase;
+    transition: all 100ms ease-in-out;
+
+    &:hover{
+        background-color: $orange-hover;
+        margin-top: -2px !important;
+        margin-bottom: 2px !important;
+        color: white;
+    }
+
+    @media (min-width: 768px) { padding: 10px 25px;}
+}
+
+.btn-more{
+    width: 90%;
+    padding: 10px 0;
+    color: white;
+    background-color: $blue;
+    border-bottom: 4px solid $blue-shadow;
+    transition: all 100ms ease-in-out;
+
+    &:hover{
+        background-color: $blue-hover;
+        margin-top: -2px !important;
+        // margin-bottom: 2px;
+        color: white;
+    }
+}

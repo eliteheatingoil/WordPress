@@ -1,0 +1,84 @@
+.nav{
+    padding: 10px;
+    border-bottom: 5px solid $orange;
+    font-size: 16px;
+
+    // logo
+    img{
+        display: block;
+        max-height: 45px;
+
+        @media (max-width: 1076px) { max-height: 35px; margin-top: 5px;}
+        @media (max-width: 1020px) { max-height: 30px; margin-top: 7px;}
+        @media (max-width: 991px) { margin: 0px auto;}
+        @media (max-width: 768px) { max-height: 40px;margin: 6px 0 0 0; float: left;}
+        @media (max-width: 575px) { max-height: 30px;margin: 10px 0;}
+        @media (max-width: 450px) { max-height: 25px;margin: 12px 0;}
+        @media (max-width: 380px) { max-height: 22px;margin: 14px 0;}
+        @media (max-width: 380px) { max-height: 20px;margin: 16px 0;}
+    }
+
+    .logo-burger{
+        @media (max-width: 768px) { padding: 0px;}
+    }
+
+    // information blocks
+    .information{ 
+        padding: 0 20px; float: right;
+
+        @media (max-width: 991px) { 
+            float: none;
+            margin: 0px auto;
+            width: 595px;
+        }
+
+        // information block
+        .info-block{
+            max-width: 220px;
+            padding: 0 20px;
+            display: inline-block;
+
+            .fa{
+                color: $blue;
+            }
+
+            .info-label{
+                color: #989898;
+                font-weight: bold;
+                font-size: 14px;
+                @media (max-width: 991px) { text-align: center; }
+            }
+
+            &:nth-child(2) { border-left: 2px solid #ddd; }
+            &:nth-child(3) { border-left: 2px solid #ddd; }
+        }
+
+    }
+
+    // desktop navigation
+    .navigation nav{
+        margin-top: 10px;
+        text-align: center;
+
+        ul{
+            border-top: 1px solid #e8e8e8;
+            width: 100%;
+        }
+
+        li {
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 991px) { 
+            float: none;
+            text-align: center;
+        }
+    }
+
+
+} 
+
+.navigation, .info{
+    @media (max-width: 768px) { display: none;}
+}

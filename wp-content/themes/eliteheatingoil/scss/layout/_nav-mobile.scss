@@ -1,0 +1,32 @@
+.mobile-nav{
+    max-height: 0px;
+    transition: all .5s ease-in-out;
+    overflow-y: hidden;
+    width: 100%;
+
+    li{
+        display: block;
+        
+        text-align: left;
+        border-top: 1px solid #e8e8e8;
+
+        a {
+            display: block;
+            width: 100%;
+            padding: 15px;
+
+            &:hover{
+                background-color: #f9f9f9;
+            }
+            
+        }
+
+
+    }
+
+    @media (min-width: 768px) { display: none;}
+}
+
+.open{
+    max-height: 500px;
+}

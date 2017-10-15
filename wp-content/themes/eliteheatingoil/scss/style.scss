@@ -1,0 +1,45 @@
+/*
+Theme Name: Elite Heating Oil Custom Theme
+Author: Kyle Cogswell
+Description: Custom theme built to meet business requirements of Elite Heating Oil
+Version: 0.0.1
+Tags: bootstrap
+*/
+
+@import "components/components";
+@import "layout/layout";
+@import "overrides/overrides";
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  min-height: 100%;
+  height: 100%;
+  min-width: 320px;
+}
+
+// global ul/li styles
+ul{
+    margin: 0px;
+    padding: 10px 0 0 0;
+}
+
+li{
+    font-weight: bold;
+}
+
+// global section style
+section{
+    margin-bottom: 20px;
+}
+
+.hidden-fields, .hidden{
+    display: none;
+}
+
+.alert-grey{
+    color: #333333;
+    background-color: #f3f3f3;
+    border: none;
+}
+
