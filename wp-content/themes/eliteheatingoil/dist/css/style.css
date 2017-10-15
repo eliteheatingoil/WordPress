@@ -429,6 +429,13 @@ form .form-group .btn-orange.form-orange {
   }
 }
 
+@media (max-width: 1020px) {
+  .nav img {
+    max-height: 30px;
+    margin-top: 7px;
+  }
+}
+
 @media (max-width: 991px) {
   .nav img {
     margin: 0px auto;
@@ -443,24 +450,31 @@ form .form-group .btn-orange.form-orange {
   }
 }
 
-@media (max-width: 524px) {
+@media (max-width: 575px) {
   .nav img {
     max-height: 30px;
     margin: 10px 0;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .nav img {
     max-height: 25px;
     margin: 12px 0;
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
   .nav img {
     max-height: 22px;
     margin: 14px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav img {
+    max-height: 20px;
+    margin: 16px 0;
   }
 }
 
