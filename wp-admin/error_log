@@ -1,0 +1,2 @@
+[15-Oct-2017 11:22:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/elitciii/public_html/wp-content/plugins/duplicator/ctrls/ctrl.tools.php on line 94
+[15-Oct-2017 11:22:11 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/elitciii/public_html/wp-content/plugins/duplicator/ctrls/ctrl.tools.php on line 94
