@@ -173,6 +173,7 @@ $(document).ready(function(){
 
       } else {
         console.log(errors.length);
+        console.log( $("#delivery-form") );
         $("#delivery-form").submit();
         return true;
       
