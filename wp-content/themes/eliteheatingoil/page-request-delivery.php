@@ -48,7 +48,7 @@ endif;
 
     <div class="page-body">
 
-        <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery">
+        <form method="POST" action="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery" id="delivery-form">
             <input type="hidden" name="daily_price" value="<?php echo $price ?>">
             <h4>Order Type <span class="required">*</span></h4>
             <div class="form-section">
@@ -136,7 +136,7 @@ endif;
                 </div>
                 <div class="col-sm-12 form-group">
                     <label for="phone">Phone <span class="required">*</span> <span class="text-muted">(&times;&times;&times;-&times;&times;&times;-&times;&times;&times;&times;)</span></label>
-                    <input type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="phone" value="" class="form-control" required>
+                    <input type="tel" name="phone" value="" class="form-control" required>
                 </div>
             <div style="clear:both;"></div>
             </div>
@@ -212,7 +212,7 @@ endif;
             </div>
 
             <div class="form-group">
-                <input type="submit" name="submit" class="btn btn-orange form-orange" value="Submit">
+                <input type="submit" name="submit" class="btn btn-orange form-orange" id="delivery-submit" value="Submit">
             </div>
         </form>
 
