@@ -97,12 +97,7 @@ $(document).ready(function(){
 
 
   // Additional Delivery Form Validation
-    // Initialize form validation on the registration form.
-    // It has the name attribute "registration"
     $("#delivery-form").submit( function(event){
-
-      // prevent submission
-      event.preventDefault();
 
       //check fields
       var fields_array = ['order_type', 
@@ -146,7 +141,8 @@ $(document).ready(function(){
       // if there are errors present
       if ( errors.length > 0 ) {
 
-       
+        // prevent submission
+        event.preventDefault();
 
         // prepare message
         var message = "<p>Oops, looks you missed some required information. Please fill out the field(s) listed below.</p>";
@@ -169,13 +165,11 @@ $(document).ready(function(){
           scrollTop: $('.alert.alert-danger').offset().top},
           'slow');
 
-        return false;
-
       } else {
         console.log(errors.length);
         console.log( $("#delivery-form") );
         
-        return true;
+        return;
       
       }
 
