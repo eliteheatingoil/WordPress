@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="<?php echo get_bloginfo( 'template_directory' );?>/css/animate.css" rel="stylesheet">
-	<link href="<?php echo get_bloginfo( 'template_directory' );?>/dist/css/style.min.css?v=1.2.0" rel="stylesheet">
+	<link href="<?php echo get_bloginfo( 'template_directory' );?>/dist/css/style.min.css?v=1.3.0" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
