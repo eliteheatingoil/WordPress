@@ -1,10 +1,10 @@
 <div class="info-block">
     <div class="info-label">
         <i class="fa fa-clock-o" aria-hidden="true"></i> 
-        <span>Monday-Friday</span>
+        <span>Monday-Saturday</span>
     </div>
     <div class="info-body">
-        8:30am - 4:30pm
+        8:00am - 9:30pm
     </div>
 </div>
 

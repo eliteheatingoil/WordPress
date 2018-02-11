@@ -53,7 +53,7 @@ endif;
             <h4>Order Type <span class="required">*</span></h4>
             <div class="form-section">
                 <div class="col-md-12 alert alert-grey">
-                    Minimum order of $250.
+                    Minimum order of $200.
                 </div>
                 <div class="col-sm-4">
                     <label for="fill"><input type="radio" name="order_type" id="fill" value="fill" required>Fill</label>

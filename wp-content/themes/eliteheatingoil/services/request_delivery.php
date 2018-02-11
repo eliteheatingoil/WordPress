@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if ($first_name && $last_name && $email && $emailIsValid && $subject && $phone) {
             $logo_path = get_bloginfo( 'template_directory' ) . '/images/blue_long_logo.png';
             
-            $email_to = "deliveries@eliteheatingoil.ca"; // your email address send TO
+            $email_to = "deliveries@eliteheatingoil.ca, jrw2012@me.com"; // your email address send TO
             $email_from = "support@eliteheatingoil.ca"; // your email address send FROM
 
             $body = "
@@ -221,8 +221,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
             $a = mail($email_to, $subject, $body, $headers);
+            
+            $sms = mail('17822344449@msg.telus.com', 'Delivery Request', 'There is a new Delivery Request!', $headers);
 
-            if($a){
+            if($a && $sms){
                 $emailSent = true;
             }else{
                 $emailFailed = true;
