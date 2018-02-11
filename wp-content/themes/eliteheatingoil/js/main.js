@@ -146,7 +146,7 @@ $(document).ready(function(){
       // if there are errors present
       if ( errors.length > 0 ) {
 
-        console.log(errors.length);
+       
 
         // prepare message
         var message = "<p>Oops, looks you missed some required information. Please fill out the field(s) listed below.</p>";
@@ -172,7 +172,7 @@ $(document).ready(function(){
         return false;
 
       } else {
-
+        console.log(errors.length);
         $("#delivery-form").submit();
       
       }
