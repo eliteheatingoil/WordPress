@@ -410,7 +410,7 @@ form .form-group .btn-orange.form-orange {
   max-height: 45px;
 }
 
-@media (max-width: 1076px) {
+@media (max-width: 1159px) {
   .nav img {
     max-height: 35px;
     margin-top: 5px;
@@ -481,7 +481,7 @@ form .form-group .btn-orange.form-orange {
   .nav .information {
     float: none;
     margin: 0px auto;
-    width: 595px;
+    width: 610px;
   }
 }
 
