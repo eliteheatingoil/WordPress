@@ -135,6 +135,7 @@ $(document).ready(function(){
 
           if ( !input.val() ) {
             // add it to errors list
+            input.css('border', '1px solid red');
             errors.push(fields_array[x]);
           }
 
@@ -146,7 +147,7 @@ $(document).ready(function(){
       if ( errors.length > 0 ) {
 
         // prepare message
-        var message = "<p>Oops, looks you missed some required information. Please fill out the fields(s) listed below.</p>";
+        var message = "<p>Oops, looks you missed some required information. Please fill out the field(s) listed below.</p>";
 
         // create list of fields
         message += "<ul>"
@@ -162,11 +163,13 @@ $(document).ready(function(){
 
         $(".page-content").prepend("<div class='alert alert-danger'>" + message + "</div>");
 
+        $('html,body').animate({
+          scrollTop: $('.alert.alert-danger').offset().top},
+          'slow');
+
         return false;
 
       } else {
-
-        console.log(errors.length);
 
         $("#delivery-form").submit();
       
