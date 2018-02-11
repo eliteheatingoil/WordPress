@@ -1,13 +1,5 @@
 
 $(document).ready(function(){
-  /// HERO SLIDER ///
-  // $('.hero-slider').slick({
-  //   dots: true,
-  //   infinite: false,
-  //   speed: 300,
-  //   autoplay: true,
-  //   autoplaySpeed: 3000,
-  // });
 
   $('#datetimepicker1').datetimepicker({
     format: 'MM/DD/YYYY' 
@@ -103,4 +95,89 @@ $(document).ready(function(){
 
   });
 
+
+  // Additional Delivery Form Validation
+    // Initialize form validation on the registration form.
+    // It has the name attribute "registration"
+    $("#delivery-submit").on('click', function(event){
+
+      // prevent submission
+      event.preventDefault();
+
+      //check fields
+      var fields_array = ['order_type', 
+                          'date', 
+                          'first_name',
+                          'last_name', 
+                          'address', 
+                          'city', 
+                          'postal_code', 
+                          'email', 
+                          'phone',
+                          'payment_method',
+                          'location',
+                        ];
+
+      var errors = [];
+
+      // iterate our fields to validate
+      for (var x=0; x < fields_array.length; x++) {
+
+        var input = $("input[name='" + fields_array[x] + "']");
+
+        if (input.attr('type') === 'radio'){
+
+          if($("input[name='" + fields_array[x] + "']:checked").length <=0) {
+            errors.push(fields_array[x]);
+          }
+
+        } else {
+
+          if ( !input.val() ) {
+            // add it to errors list
+            errors.push(fields_array[x]);
+          }
+
+        }
+
+      }
+
+      // if there are errors present
+      if ( errors.length > 0 ) {
+
+        // prepare message
+        var message = "<p>Oops, looks you missed some required information. Please fill out the fields(s) listed below.</p>";
+
+        // create list of fields
+        message += "<ul>"
+        for ( var x=0; x < errors.length ; x++) {
+          var field_title = toTitleCase( errors[x].replace("_", " ") );
+          message += "<li>" + field_title + "</li>";
+        }
+        message += "</ul>";
+
+        if ( $(".page-content .alert.alert-danger").length > 0){
+          $(".page-content .alert.alert-danger").remove();
+        }
+
+        $(".page-content").prepend("<div class='alert alert-danger'>" + message + "</div>");
+
+        return false;
+
+      } else {
+
+        console.log(errors.length);
+
+        $("#delivery-form").submit();
+      
+      }
+
+     
+    });
+
+
+    function toTitleCase(str)
+    {
+      return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    }
 });
