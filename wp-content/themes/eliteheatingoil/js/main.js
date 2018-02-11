@@ -174,6 +174,7 @@ $(document).ready(function(){
       } else {
         console.log(errors.length);
         $("#delivery-form").submit();
+        return true;
       
       }
 
