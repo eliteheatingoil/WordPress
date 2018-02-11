@@ -99,7 +99,7 @@ $(document).ready(function(){
   // Additional Delivery Form Validation
     // Initialize form validation on the registration form.
     // It has the name attribute "registration"
-    $("#delivery-submit").on('click', function(event){
+    $("#delivery-form").submit( function(event){
 
       // prevent submission
       event.preventDefault();
@@ -174,7 +174,7 @@ $(document).ready(function(){
       } else {
         console.log(errors.length);
         console.log( $("#delivery-form") );
-        $("#delivery-form").submit();
+        
         return true;
       
       }
