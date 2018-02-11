@@ -99,6 +99,9 @@ $(document).ready(function(){
   // Additional Delivery Form Validation
     $("#delivery-form").submit( function(event){
 
+      // prevent submission
+      event.preventDefault();
+
       //check fields
       var fields_array = ['order_type', 
                           'date', 
@@ -141,8 +144,7 @@ $(document).ready(function(){
       // if there are errors present
       if ( errors.length > 0 ) {
 
-        // prevent submission
-        event.preventDefault();
+
 
         // prepare message
         var message = "<p>Oops, looks you missed some required information. Please fill out the field(s) listed below.</p>";
@@ -169,7 +171,7 @@ $(document).ready(function(){
         console.log(errors.length);
         console.log( $("#delivery-form") );
         
-        return;
+        this.submit();
       
       }
 
