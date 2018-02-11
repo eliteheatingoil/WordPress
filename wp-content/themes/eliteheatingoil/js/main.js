@@ -22,7 +22,7 @@ $(document).ready(function(){
 
   $('input[name="litres_amount"]').on('change keyup keydown input',function(){
     var value = $(this).val();
-    var price = $('input[name="daily_price"').val();
+    var price = $('input[name="daily_price"]').val();
     var span_sub_total = $(this).parent().siblings('.form-group').find('span.sub-total');
     var span_tax = $(this).parent().siblings('.form-group').find('span.tax');
     var span_total = $(this).parent().siblings('.form-group').find('span.total');
@@ -45,7 +45,7 @@ $(document).ready(function(){
 
   $('input[name="amount"]').on('change keyup keydown input',function(){
     var value = $(this).val();
-    var price = $('input[name="daily_price"').val();
+    var price = $('input[name="daily_price"]').val();
     var span_sub_total = $(this).parent().siblings('.form-group').find('span.sub-total');
     var span_tax = $(this).parent().siblings('.form-group').find('span.tax');
     var span_total = $(this).parent().siblings('.form-group').find('span.total');
@@ -97,12 +97,7 @@ $(document).ready(function(){
 
 
   // Additional Delivery Form Validation
-    // Initialize form validation on the registration form.
-    // It has the name attribute "registration"
-    $("#delivery-submit").on('click', function(event){
-
-      // prevent submission
-      event.preventDefault();
+    $("#delivery-form").submit( function(event){
 
       //check fields
       var fields_array = ['order_type', 
@@ -146,6 +141,9 @@ $(document).ready(function(){
       // if there are errors present
       if ( errors.length > 0 ) {
 
+        // prevent submission
+        event.preventDefault();
+
         // prepare message
         var message = "<p>Oops, looks you missed some required information. Please fill out the field(s) listed below.</p>";
 
@@ -167,11 +165,11 @@ $(document).ready(function(){
           scrollTop: $('.alert.alert-danger').offset().top},
           'slow');
 
-        return false;
-
       } else {
-
-        $("#delivery-form").submit();
+        console.log(errors.length);
+        console.log( $("#delivery-form") );
+        
+        return true;
       
       }
 
