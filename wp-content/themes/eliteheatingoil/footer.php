@@ -25,7 +25,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src="<?php echo get_bloginfo( 'template_directory' );?>/dist/js/main.min.js"></script>
+    <script src="/wp-content/themes/eliteheatingoil/dist/js/main.min.js"></script>
 <?php wp_footer(); ?> 
   </body>
 </html>
