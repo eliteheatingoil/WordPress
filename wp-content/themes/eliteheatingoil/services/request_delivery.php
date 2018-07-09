@@ -75,9 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             die("Header injection detected");
         }
 
-        $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-
-        if ($first_name && $last_name && $email && $emailIsValid && $subject && $phone) {
+        if ($first_name && $last_name && $email && $subject && $phone) {
             $logo_path = get_bloginfo( 'template_directory' ) . '/images/blue_long_logo.png';
             
             $email_to = "deliveries@eliteheatingoil.ca, jrw2012@me.com"; // your email address send TO
@@ -229,6 +227,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             }else{
                 $emailFailed = true;
             }
+        }
+        else {
+            $emailFailed = true;
         }
         
      }  

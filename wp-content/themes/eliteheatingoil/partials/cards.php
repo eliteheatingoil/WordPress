@@ -47,8 +47,8 @@
               <li>Porters Lake</li>
             </ul>
             </div>
-
-            <p class="and-more hidden-xs hidden-md hidden-lg"> and more ... </p>
+	    <div style="clear:both;"></div>
+            <p style="margin-top:10px;"> Now offering clear and dyed diesel! </p>
 
           </div>
           <div class="card-footer text-center">

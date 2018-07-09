@@ -52,9 +52,6 @@ endif;
             <input type="hidden" name="daily_price" value="<?php echo $price ?>">
             <h4>Order Type <span class="required">*</span></h4>
             <div class="form-section">
-                <div class="col-md-12 alert alert-grey">
-                    Minimum order of $200.
-                </div>
                 <div class="col-sm-4">
                     <label for="fill"><input type="radio" name="order_type" id="fill" value="fill" required>Fill</label>
                 </div>
@@ -132,7 +129,7 @@ endif;
                 </div>
                 <div class="col-sm-12 form-group">
                     <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" name="email" value="" class="form-control" required>
+                    <input type="text" name="email" value="" class="form-control" required>
                 </div>
                 <div class="col-sm-12 form-group">
                     <label for="phone">Phone <span class="required">*</span> <span class="text-muted">(&times;&times;&times;-&times;&times;&times;-&times;&times;&times;&times;)</span></label>
@@ -152,14 +149,14 @@ endif;
                         <input type="radio" name="payment_method" value="Debit Card (at the door)" required>Debit (at the door)
                     </label>
                     <label for="payment_method">
-                        <input type="radio" name="payment_method" value="Credit Card" required>Credit Card (Visa, Mastercad, and American Express)
+                        <input type="radio" name="payment_method" value="Credit Card" required>Credit Card (Visa, Mastercard, and American Express)
                     </label>
                     <div class="col-sm-4 hidden" id="credit_payment_methods">
                         <select class="form-control" name="credit_options">
                             <option value="">--- Select an option ---</option>
                             <option value="At the door">At the door</option>
                             <option value="Over the phone">Over the phone</option>
-                            <option value="Over the phone">Information on file</option>
+                            <option value="Information on file">Information on file</option>
                         </select>
                     </div>
                     <label for="payment_method">
