@@ -13,6 +13,7 @@ Tags: bootstrap
   font-size: 1.5rem;
   border-bottom: 4px solid #b35c07;
   text-transform: uppercase;
+  -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
 }
 
@@ -35,6 +36,7 @@ Tags: bootstrap
   color: white;
   background-color: #1d4b97;
   border-bottom: 4px solid #14356c;
+  -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
 }
 
@@ -89,11 +91,13 @@ Tags: bootstrap
 }
 
 .card-about {
-  animation-delay: 400ms;
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
 }
 
 .card-services {
-  animation-delay: 500ms;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
 }
 
 @media (max-width: 991px) {
@@ -109,7 +113,8 @@ Tags: bootstrap
 }
 
 .card-faqs {
-  animation-delay: 600ms;
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
 }
 
 @media (max-width: 991px) {
@@ -221,13 +226,16 @@ Tags: bootstrap
  */
 .bm-animation {
   background-color: black;
+  -webkit-transition: height .3s;
   transition: height .3s;
 }
 
 .bm-animation:before, .bm-animation:after {
   background-color: black;
-  transition-duration: .2s, .2s;
-  transition-delay: .2s, 0s;
+  -webkit-transition-duration: .2s, .2s;
+          transition-duration: .2s, .2s;
+  -webkit-transition-delay: .2s, 0s;
+          transition-delay: .2s, 0s;
 }
 
 .bm-animation:before {
@@ -247,22 +255,26 @@ Tags: bootstrap
 /* --------------------- active state (menu open) ----------------------- */
 .burger-menu-btn.is-active .bm-animation {
   height: 0;
+  -webkit-transition: background 0s;
   transition: background 0s;
 }
 
 .burger-menu-btn.is-active .bm-animation:before, .burger-menu-btn.is-active .bm-animation:after {
-  transition-delay: 0s, .2s;
+  -webkit-transition-delay: 0s, .2s;
+          transition-delay: 0s, .2s;
 }
 
 .burger-menu-btn.is-active .bm-animation:before {
   top: 0;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .burger-menu-btn.is-active .bm-animation:after {
   bottom: 0;
   top: 0;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 form h4 {
@@ -302,7 +314,7 @@ form input[type="submit"] {
 
 @media (max-width: 388px) {
   .location-widget {
-    width: 260px;
+    width: 250px;
   }
 }
 
@@ -410,7 +422,7 @@ form .form-group .btn-orange.form-orange {
   max-height: 45px;
 }
 
-@media (max-width: 1159px) {
+@media (max-width: 1076px) {
   .nav img {
     max-height: 35px;
     margin-top: 5px;
@@ -481,7 +493,7 @@ form .form-group .btn-orange.form-orange {
   .nav .information {
     float: none;
     margin: 0px auto;
-    width: 610px;
+    width: 595px;
   }
 }
 
@@ -545,6 +557,7 @@ form .form-group .btn-orange.form-orange {
 
 .mobile-nav {
   max-height: 0px;
+  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
   overflow-y: hidden;
   width: 100%;
@@ -705,10 +718,25 @@ footer .copyright {
 }
 
 .hero {
+  position: relative;
   background-color: #1d4b97;
   padding: 40px 0;
   z-index: 9999;
   border-bottom: 5px solid #ff7b28;
+  background-image: url(../../images/hero_background.jpg);
+  height: 400px;
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero .container {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  top: 0;
+  background-color: #17489c1f;
 }
 
 .hero-slider .slide img {
@@ -746,7 +774,8 @@ footer .copyright {
   height: 205px;
   background-image: url("../../images/truck.png");
   background-position: left;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   background-repeat: no-repeat;
 }
 
