@@ -4,7 +4,7 @@
         <span>Monday-Friday</span>
     </div>
     <div class="info-body">
-        8:30am - 9:00pm
+        8:00am - 9:00pm
     </div>
 </div>
 
@@ -20,7 +20,7 @@
 
 <div class="info-block">
     <div class="info-label">
-        <i class="fa fa-phone" aria-hidden="true"></i> 
+        <i class="fa fa-envelope" aria-hidden="true"></i> 
         <span>Email us</span>
     </div>
     <div class="info-body">
