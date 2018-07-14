@@ -9,31 +9,48 @@
 
   .content{
     height: 205px;
-    background-image: url("../../images/truck.png");
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: $blue;
+    position: relative;
 
-    @media (min-width: 576px) { background-position: center; }
+    @media (max-width: 680px) { height: 255px; }
   }
 
   .message{
     margin: auto;
     position: absolute;
-    top: 0;
+    top: 80px;
     bottom: 0;
     right: 0;
     left: 0;
-    height: 150px;
+    height: 167px;
     width: 244px;
 
     @media (min-width: 320px) { width: 258px; }
 
-    @media (min-width: 576px) { left:50px; right:auto;}
+    @media (min-width: 680px) { left:50px; top: 0px; right:auto;}
 
     @media (min-width: 992px) { left:80px; }
 
     @media (min-width: 1200px) { left:115px; }
+  }
+
+  .find-on-facebook {
+    position: absolute;
+    text-align: center;
+    right: 0;
+    top: 65px;
+    width: 275px;
+    padding: 20px 30px;
+    background-color: $orange;
+
+    @media (max-width: 680px) { 
+      position: relative;
+      width: 100%; 
+      top: 0;
+    }
+    img {
+      max-width: 200px;
+    }
   }
 }
 

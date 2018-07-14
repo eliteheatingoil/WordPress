@@ -32,8 +32,15 @@ $the_query = new WP_Query(array(
                 <div class="row">Plus Tax</div>
               </div>
             </div>
-<a href="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery"><button type="button" class="btn btn-orange">Order Now</button></a>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>request-delivery"><button type="button" class="btn btn-orange">Order Now</button></a>
           </div>
+        
+          <div class="find-on-facebook">
+            <a href="facebook.com">
+              <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/facebook.svg" alt="Find us on Facebook!">
+            </a>
+          </div>
+        
         </div>
       </div>
   </div>
