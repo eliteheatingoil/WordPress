@@ -39,7 +39,7 @@
 
 	<div class="row nav">
 		<div class="col-md-4 logo-burger"> 
-			<img src="<?php echo get_bloginfo( 'template_directory' );?>/images/blue_long_logo.png" alt="" class="">
+			<img src="<?php echo get_bloginfo( 'template_directory' );?>/images/blue_long_logo.png?v=2" alt="" class="">
 			<button class="burger-menu-btn">
 				<i class="burger-icon bm-animation"></i>
 				<span class="bg-menu-text">Menu</span>
