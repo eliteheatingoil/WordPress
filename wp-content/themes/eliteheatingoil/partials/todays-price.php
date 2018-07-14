@@ -36,7 +36,7 @@ $the_query = new WP_Query(array(
           </div>
         
           <div class="find-on-facebook">
-            <a href="https://www.facebook.com/eliteheatingoil/">
+            <a target="_blank" href="https://www.facebook.com/eliteheatingoil/">
               <img src="<?php echo get_bloginfo( 'template_directory' );?>/images/facebook.svg" alt="Find us on Facebook!">
             </a>
           </div>
